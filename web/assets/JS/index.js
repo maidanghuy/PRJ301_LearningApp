@@ -1,11 +1,13 @@
-const navbarItems = document.querySelectorAll(".navbar-items");
+const sidebarItems = document.querySelectorAll(".sidebar__item");
 
-navbarItems.forEach((item) => {
+sidebarItems.forEach((item) => {
   item.addEventListener("click", () => {
-    if (item.classList.contains("navbar_active")) return;
+    if (item.classList.contains("sidebar__item--active")) return;
 
-    navbarItems.forEach((nav) => nav.classList.remove("navbar_active"));
+    // Loại bỏ class active khỏi tất cả các mục
+    sidebarItems.forEach((nav) => nav.classList.remove("sidebar__item--active"));
 
-    item.classList.add("navbar_active");
+    // Thêm class active vào mục được click
+    item.classList.add("sidebar__item--active");
   });
 });

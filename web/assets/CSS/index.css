@@ -1,3 +1,4 @@
+<<<<<<< HEAD:web/assets/CSS/styles.css
 /* =================Common================= */
 * {
   box-sizing: border-box;
@@ -37,19 +38,38 @@ button {
 /* =================NavBar================= */
 .Header-tmp {
   max-width: 320px;
+=======
+/* =================Left Content================= */
+/* Sidebar container */
+.sidebar {
+>>>>>>> 852180bb9a4ee4c312f955964aeb82d82380a614:web/assets/CSS/index.css
   height: 100%;
-  padding: 40px 40px;
+  padding: 40px;
   background: #fff4e5;
   position: fixed;
   top: 0;
   left: 0;
 }
 
-.nav-bar {
+/* Logo */
+.sidebar__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar__logo-image {
+  width: 100%;
+  max-width: 150px;
+}
+
+/* Navigation */
+.sidebar__nav {
   margin-top: 50px;
 }
 
-.navbar-items {
+/* Sidebar item */
+.sidebar__item {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -59,28 +79,38 @@ button {
   margin-top: 15px;
   color: #6a655c;
   cursor: pointer;
+  border-radius: 50px;
+  transition: background 0.3s ease-in-out;
 }
 
-.navbar_active {
-  width: 240px;
-  height: 48px;
-  border-radius: 50px;
+/* Active item */
+.sidebar__item--active {
   background: #fb9400;
   color: #fff;
   font-weight: 900;
   font-size: 1.6rem;
 }
 
-.navbar-link {
-  color: inherit;
+/* Sidebar icon */
+.sidebar__icon {
+  width: 24px;
+  height: 24px;
 }
 
-.navbar-desc {
+/* Sidebar link */
+.sidebar__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Sidebar text */
+.sidebar__text {
   font-weight: 500;
   font-size: 1.4rem;
   color: inherit;
 }
 
+/* =================Right Content================= */
 :root {
   --primary-color: #d89208;
   --secondary-color: #ffffff;
@@ -88,12 +118,15 @@ button {
   --bg-color: #f8f9fa;
   --font-size: 16px;
 }
+<<<<<<< HEAD:web/assets/CSS/styles.css
 /* css quy */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+=======
+>>>>>>> 852180bb9a4ee4c312f955964aeb82d82380a614:web/assets/CSS/index.css
 
 body {
   font-family: Arial, sans-serif;
@@ -365,8 +398,11 @@ body {
 .test-image img {
   width: 100%;
   border-radius: 15px;
+<<<<<<< HEAD:web/assets/CSS/styles.css
 }
 /* rightContent */
 .rightContent{
   margin-left: 20%;
+=======
+>>>>>>> 852180bb9a4ee4c312f955964aeb82d82380a614:web/assets/CSS/index.css
 }
