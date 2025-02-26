@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Roboto", serif;
+    background-color: #fffaf5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font-size: inherit;
+    font-family: inherit;
+}
