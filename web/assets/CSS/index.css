@@ -361,3 +361,136 @@ body {
   flex-grow: 1;
   margin-left: 20%;
 }
+
+/* Reset CSS */
+/* Footer Styling */
+/* Footer Styling */
+.footer {
+  background-color: #f3f3f3;
+  padding: 40px 0px;
+  padding-bottom: 0;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo img {
+  object-fit: cover;
+}
+/* 
+.footer-mid {
+  padding: 5rem 0;
+  background-color: black;
+} */
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  border-bottom: 4px solid rgb(243, 243, 243);
+}
+
+/* Left Section */
+.footer-left {
+  width: 50%;
+
+  border-right: solid 2px #000;
+}
+
+.footer-logo {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.footer-left h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+  color: #000;
+}
+
+.footer-left .subtitle {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.footer-left .footer-desc {
+  color: #7a7a7a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Right Section */
+.footer-right {
+  width: 40%;
+  margin-left: 5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 2rem;
+}
+
+.contact-item i {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #555;
+}
+
+.contact-item span {
+  font-weight: bold;
+  text-align: left;
+  margin-left: -1rem;
+}
+
+.contact-item p {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Social Icons */
+.footer-social {
+  text-align: right;
+  padding: 15px 0;
+  padding-right: 2rem;
+  background: #eaeaea;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  font-size: 20px;
+  color: #555;
+  transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: #ff6600;
+}
+
+.fa-facebook {
+  color: #3b5998;
+}
+
+.fa-linkedin {
+  color: #0077b5;
+}
+
+.fa-envelope {
+  color: rgba(139, 139, 34, 0.732);
+}
+
+.fa-youtube {
+  color: #ff0000;
+}
