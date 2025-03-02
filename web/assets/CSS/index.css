@@ -7,6 +7,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 
 /* Logo */
@@ -18,7 +19,7 @@
 
 .sidebar__logo-image {
   width: 100%;
-  max-width: 150px;
+  max-width: 240px;
 }
 
 /* Navigation */
@@ -84,14 +85,18 @@ body {
   background-color: var(--bg-color);
 }
 
-.header {
+.header_content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; /* Đảm bảo header luôn nằm trên */
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 10px 20px;
   background-color: var(--secondary-color);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng để header nổi bật */
 }
 
 .header-icons {
@@ -120,13 +125,16 @@ body {
 /* ------------------------------------------------------- */
 /* Content-1 */
 .Content-1 {
+  padding-top: 80px;
   display: block;
   margin: 0 auto;
   position: relative;
   max-width: 100%;
-  width: 800px;
+  width: 1024px;
+  height: 480px;
   border-radius: 20px;
   overflow: hidden;
+  object-fit: cover;
   box-shadow: 0px 10px var(--primary-color);
 }
 
@@ -183,7 +191,7 @@ body {
 
 /* ------------------------------------------------------- */
 /* Content-2 */
-.Content-2 {
+.introduction {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -243,7 +251,7 @@ body {
 /* ------------------------------------------------------- */
 /* Content-3 */
 
-.Content-3 {
+.service {
   text-align: center;
   max-width: 800px;
   margin: 40px auto;
@@ -295,12 +303,12 @@ body {
 
 /* ------------------------------------------------------- */
 /* Content-4 */
-.Content-4 {
+.testing {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 900px;
-  margin: 40px auto;
+  margin: 60px auto;
   gap: 20px;
 }
 
@@ -352,12 +360,12 @@ body {
 
 /* CSS 2 Phan cua page */
 
-.wrapper{
+.wrapper {
   display: flex;
   justify-content: space-between;
 }
 
-.wrapper__right{
+.wrapper__right {
   flex-grow: 1;
   margin-left: 20%;
 }
@@ -369,17 +377,15 @@ body {
   background-color: #f3f3f3;
   padding: 40px 0px;
   padding-bottom: 0;
+
   font-family: Arial, sans-serif;
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
 }
 
-.logo img {
-  object-fit: cover;
+.logo_image {
+  width: 240px;
 }
 /* 
 .footer-mid {
@@ -405,19 +411,13 @@ body {
 }
 
 .footer-logo {
-  width: 80px;
+  width: 100%;
   margin-bottom: 10px;
 }
 
-.footer-left h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin: 0;
-  color: #000;
-}
-
 .footer-left .subtitle {
-  font-size: 14px;
+  font-size: 1.6rem;
+  line-height: 1.75;
   font-weight: bold;
   color: black;
   margin-bottom: 10px;
