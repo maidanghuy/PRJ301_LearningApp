@@ -34,3 +34,13 @@
     width: 1024px;
     margin: 0 auto 5rem;
 }
+
+@media screen and (max-width: 1200px) {
+    .container-custom {
+        max-width: 1200px;
+    }
+
+    .container-1024 {
+        width: 100%;
+    }
+}
