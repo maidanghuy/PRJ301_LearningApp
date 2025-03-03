@@ -1,0 +1,62 @@
+.sidebar {}
+
+.sidebar__logo {
+    margin-bottom: 4rem;
+}
+
+.sidebar__nav {}
+
+.sidebar__item {
+    padding: 1.4rem 2rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.sidebar__item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    /* Màu nền nhẹ khi hover */
+}
+
+.sidebar__item:active {
+    transform: scale(0.95);
+    /* Hiệu ứng nhấn xuống */
+}
+
+.sidebar__item+.sidebar__item {
+    margin-top: 1.4rem;
+}
+
+/* Khi item được active */
+.sidebar__item--active {
+    background-color: var(--primary-color);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+    /* Làm nổi bật hơn một chút */
+}
+
+/* Khi hover vào item đang active */
+.sidebar__item--active:hover {
+    background-color: var(--primary-dark-color);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    /* Hiệu ứng đổ bóng rõ hơn */
+}
+
+.sidebar__icon {
+    margin-right: 2.6rem;
+}
+
+.sidebar__link {
+    color: #6A655C;
+    font-size: 1.8rem;
+}
+
+.sidebar__item--active>.sidebar__link {
+    color: #fff;
+    font-weight: 600;
+
+}
+
+.sidebar__text {}
