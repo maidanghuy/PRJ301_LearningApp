@@ -9,7 +9,6 @@ html {
 body {
     font-size: 1.6rem;
     font-family: "Roboto", serif;
-    background-color: #fffaf5;
 }
 
 h1,
@@ -31,4 +30,9 @@ select,
 button {
     font-size: inherit;
     font-family: inherit;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
 }

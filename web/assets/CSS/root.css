@@ -1,0 +1,36 @@
+:root {
+    --bg-color: #FFF4E5;
+    --primary-color: #FB9400;
+    --primary-dark-color: #e08301;
+    --secondary-color: #F3F3F3;
+}
+
+.container-custom {
+    display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+}
+
+.container-left {
+    width: 320px;
+    background-color: var(--bg-color);
+    color: white;
+    padding: 20px;
+}
+
+.container-right {
+    width: calc(100% - 320px);
+    padding: 20px 20px 0;
+    background-color: #fff;
+}
+
+/* Main container */
+.main-content {
+    /*min-height: 100vh;*/
+}
+
+.container-1024 {
+    width: 1024px;
+    margin: 0 auto 5rem;
+}
