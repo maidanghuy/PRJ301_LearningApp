@@ -1,6 +1,7 @@
 <%-- Document : login Created on : Mar 3, 2025, 9:26:32 PM Author : macbookpro --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -25,8 +26,13 @@
                         <p class="auth__header-subtitle">Let's learn English with G-easy every day</p>
                     </div>
                 </div>
+
+                <c:if test="${not empty requestScope.error}">
+                    <div class="alert alert-danger text-center">${requestScope.error}</div>
+                </c:if>
+
                 <div class="auth__body">
-                    <form action="#" method="post">
+                    <form action="DivideActionServlet" method="post">
                         <input type="text" id="formName" name="formName" value="login" hidden>
                         <!-- Form Login -->
                         <div class="auth__input-group">
@@ -42,34 +48,6 @@
                         </div>
                         <div class="auth__input-group">
                             <a href="#" class="auth__forgot-password">Quên mật khẩu?</a>
-                        </div>
-                        <!-- Form Register -->
-                        <div class="auth__input-group hidden">
-                            <input type="text" id="fullname" name="fullname" class="auth__input"
-                                   placeholder="Họ và tên" required>
-                        </div>
-                        <div class="auth__input-group hidden">
-                            <input type="email" id="email" name="email" class="auth__input" placeholder="Email"
-                                   required>
-                        </div>
-                        <div class="auth__input-group hidden">
-                            <input type="tel" id="phone" name="phone" class="auth__input"
-                                   placeholder="Số điện thoại" required>
-                        </div>
-                        <div class="auth__input-group hidden">
-                            <input type="text" id="username" name="username" class="auth__input"
-                                   placeholder="Tài khoản" required>
-                        </div>
-                        <div class="auth__input-group hidden">
-                            <input type="password" id="password" name="password" class="auth__input"
-                                   placeholder="Mật khẩu" required>
-                            <span toggle="#password" class="auth__eye-icon" id="toggle-password">
-                                <i class="fas fa-eye-slash"></i>
-                            </span>
-                        </div>
-                        <div class="auth__input-group hidden">
-                            <input type="password" id="confirm-password" name="confirm-password" class="auth__input"
-                                   placeholder="Xác nhận mật khẩu" required>
                         </div>
                         <div class="auth__button-group">
                             <button type="submit" class="auth__button auth__button--login append">Đăng Nhập</button>
@@ -94,6 +72,14 @@
             </div>
         </div>
         <script src="./assets/JS/login.js"></script>
+        <script>
+            window.onload = function () {
+                var message = "${message}";
+                if (message.trim() !== "") {
+                    alert(message);
+                }
+            };
+        </script>
     </body>
 
 </html>

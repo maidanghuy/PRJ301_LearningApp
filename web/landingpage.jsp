@@ -5,7 +5,7 @@
 <html>
 
     <head>
-        <title>Trang chu</title>
+        <title>Home Page</title>
         <%@ include file="./includes/headInfo.jsp" %>
         <!-- styles.css: Chứa các quy tắc CSS chính của trang -->
         <link rel="stylesheet" href="./assets/CSS/index.css" />
@@ -28,6 +28,6 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/JS/index.js"></script>
+        
     </body>
-
 </html>
