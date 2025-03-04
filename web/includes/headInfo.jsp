@@ -1,6 +1,8 @@
 <%-- Document : headInfo Created on : Mar 3, 2025, 12:40:29 AM Author : macbookpro --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page contentType="text/html" import="model.*,java.util.*, modelDAO.*, controller.*" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Tải trước kết nối đến Google Fonts để tăng tốc độ tải -->
