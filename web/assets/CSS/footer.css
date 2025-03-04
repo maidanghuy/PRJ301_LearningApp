@@ -1,0 +1,143 @@
+footer {
+    background-color: var(--secondary-color);
+    padding: 5rem 0 0;
+    margin-left: -2rem;
+    width: calc(100% + 4rem);
+}
+
+footer .container-1024 {
+    margin: 0;
+    width: 100%;
+}
+
+.footer {
+    background-color: #f3f3f3;
+    padding: 40px 0px;
+    padding-bottom: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer__logo img {
+    object-fit: cover;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    padding: 3rem;
+    gap: 5rem;
+
+    /* border-bottom: 4px solid rgb(243, 243, 243);*/
+}
+
+/* Left Section */
+.footer__left {
+    width: 50%;
+    /* border-right: solid 2px #000; */
+}
+
+.footer__logo-img {
+    margin-bottom: 10px;
+}
+
+.footer__left h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+}
+
+.footer__left .footer__subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.footer__left .footer__description {
+    color: #7a7a7a;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer__mid {
+    width: 1.4px;
+    height: 10rem;
+    background-color: #000;
+    border-radius: 9999px;
+}
+
+/* Right Section */
+.footer__right {
+    width: 40%;
+    margin-left: 5rem;
+}
+
+.footer__contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 2rem;
+}
+
+.footer__contact-item i {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #555;
+}
+
+.footer__contact-item span {
+    font-weight: bold;
+    text-align: left;
+    margin-left: -1rem;
+}
+
+.footer__contact-item p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Social Icons */
+.footer__social {
+    text-align: right;
+    padding: 15px 0;
+    padding-right: 2rem;
+    background: #eaeaea;
+}
+
+.footer__social a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: #555;
+    transition: 0.3s;
+}
+
+.footer__social a:hover {
+    color: #ff6600;
+}
+
+.fa-facebook {
+    color: #3b5998;
+}
+
+.fa-linkedin {
+    color: #0077b5;
+}
+
+.fa-envelope {
+    color: rgba(139, 139, 34, 0.732);
+}
+
+.fa-youtube {
+    color: #ff0000;
+}
