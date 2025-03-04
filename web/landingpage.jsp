@@ -18,6 +18,7 @@
             </div>
             <div class="container-right">
                 <div class="main-content">
+                    <%@ include file="./includes/header.jsp" %>
                     <%@ include file="./includes/main.jsp" %>
                 </div>
                 <footer>
