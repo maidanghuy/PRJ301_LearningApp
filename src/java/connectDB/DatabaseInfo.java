@@ -11,7 +11,7 @@ package connectDB;
 public interface DatabaseInfo {
     final public static String DRIVERNAME = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
     final public static String DBNAMESEVER = "localhost:1433";
-    final public static String DBNAME = "FruitShop";
+    final public static String DBNAME = "ElearningDB";
     final public static String DBURL = "jdbc:sqlserver://"
             + DBNAMESEVER
             + ";databaseName="

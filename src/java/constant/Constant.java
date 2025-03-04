@@ -19,5 +19,5 @@ public class Constant {
 
     public static final String GOOGLE_LINK_GET_TOKEN = IConstant.GOOGLE_LINK_GET_TOKEN;
 
-    public static final String GOOGLE_LINK_GET_USER_INFO = IConstant.GOOGLE_LINK_GET_USER_INFO;;
+    public static final String GOOGLE_LINK_GET_USER_INFO = IConstant.GOOGLE_LINK_GET_USER_INFO;
 }
