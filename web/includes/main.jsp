@@ -10,7 +10,7 @@
                     <img src="./assets/images/icon/Vector.svg" alt="Vector SVG">
                 </div>
                 <div class="wrapper__header-login">
-                    <a class="btn btn-login" href="#">
+                    <a class="btn btn-login" href="login.jsp">
                         <span class="text text-white">Đăng nhập</span>
                     </a>
                 </div>
