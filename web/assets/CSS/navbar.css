@@ -1,4 +1,6 @@
-.sidebar {}
+.sidebar {
+    position: fixed;
+}
 
 .sidebar__logo {
     margin-bottom: 4rem;
