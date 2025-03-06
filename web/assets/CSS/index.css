@@ -1,13 +1,12 @@
 /* Navbar */
-@import url('navbar.css');
+@import url("navbar.css");
 
 /* Header */
 
-@import url('header.css');
+@import url("header.css");
 
 /* Footer */
-@import url('footer.css');
-
+@import url("footer.css");
 
 .wrapper__banner {
   position: relative;
@@ -86,7 +85,6 @@
   font-weight: 400;
   text-align: justify;
   line-height: 2.6rem;
-
 }
 
 .btn-detail {
@@ -112,9 +110,11 @@
   margin-bottom: 4rem;
 }
 
-.services__title {}
+.services__title {
+}
 
-.services__description {}
+.services__description {
+}
 
 .services__feature {
   display: flex;
@@ -122,9 +122,11 @@
   justify-content: space-around;
 }
 
-.feature {}
+.feature {
+}
 
-.feature--item {}
+.feature--item {
+}
 
 .feature__icon {
   width: 7rem;
@@ -139,9 +141,9 @@
   margin-bottom: 2rem;
 }
 
-.feature__icon img {}
-
+.feature__icon img {
+}
 
 .feature__text {
-  color: #7B7D81;
+  color: #7b7d81;
 }
