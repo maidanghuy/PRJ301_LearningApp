@@ -1,0 +1,4 @@
+/build/
+/dist/
+/.env
+/src/java/constant/IConstant.java
