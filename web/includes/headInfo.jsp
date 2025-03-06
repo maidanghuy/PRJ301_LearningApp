@@ -1,6 +1,8 @@
 <%-- Document : headInfo Created on : Mar 3, 2025, 12:40:29 AM Author : macbookpro --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@page contentType="text/html" import="model.*,java.util.*, modelDAO.*, controller.*" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Tải trước kết nối đến Google Fonts để tăng tốc độ tải -->
@@ -11,7 +13,7 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
     rel="stylesheet" />
-
+<!-- CDN BS5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Import FontAwesome để sử dụng icon -->

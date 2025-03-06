@@ -5,7 +5,7 @@
 <html>
 
     <head>
-        <title>Trang chu</title>
+        <title>Home Page</title>
         <%@ include file="./includes/headInfo.jsp" %>
         <!-- styles.css: Chứa các quy tắc CSS chính của trang -->
         <link rel="stylesheet" href="./assets/CSS/index.css" />
@@ -19,6 +19,7 @@
             <div class="container-right">
                 <div class="main-content">
                     <%@ include file="./includes/header.jsp" %>
+                    <!-- <div style="width: 100%; height: 100rem; background-color: black"></div> -->
                     <%@ include file="./includes/main.jsp" %>
                 </div>
                 <footer>
@@ -28,6 +29,7 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/JS/index.js"></script>
+
     </body>
 
 </html>
