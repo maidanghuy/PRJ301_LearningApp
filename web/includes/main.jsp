@@ -2,16 +2,15 @@
 
     <%@page contentType="text/html" pageEncoding="UTF-8" %>
 
-        
+
         <div class="container-1024">
             <div class="wrapper__banner">
                 <img class="banner__image" src="./assets/images/banner.png" alt="Banner SVG">
                 <div class="banner__content">
                     <h1 class="banner__title title">G-Easy Learning!</h1>
                     <p class="banner__description">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto sit quis reprehenderit ratione
-                        voluptates id totam distinctio voluptatibus, doloribus recusandae sequi sapiente hic, esse
-                        nobis!
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere odio fugiat doloremque commodi
+                        rem.
                     </p>
                 </div>
                 <span class="banner__control banner__control--prev">&#10094;</span>
