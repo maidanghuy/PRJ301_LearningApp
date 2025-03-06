@@ -22,18 +22,26 @@
         <!-- Thông tin liên hệ -->
         <div class="footer__right">
             <div class="footer__contact-item">
-                <i class="fa-solid fa-phone-flip"></i>
-                <span class="footer__contact-label">Liên hệ</span>
+                <div>
+                    <i class="fa-solid fa-phone-flip"></i>
+                    <span class="footer__contact-label">Liên hệ</span>
+                </div>
                 <p class="footer__contact-info">+84 1234567890</p>
             </div>
             <div class="footer__contact-item">
-                <i class="fa-solid fa-location-dot"></i>
-                <span class="footer__contact-label">Địa chỉ</span>
+                <div>
+
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span class="footer__contact-label">Địa chỉ</span>
+                </div>
                 <p class="footer__contact-info">Số 1 Tây Sơn, Đống Đa, Hà Nội</p>
             </div>
             <div class="footer__contact-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span class="footer__contact-label">Email</span>
+                <div>
+
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="footer__contact-label">Email</span>
+                </div>
                 <p class="footer__contact-info">contact@geasy.vn</p>
             </div>
         </div>

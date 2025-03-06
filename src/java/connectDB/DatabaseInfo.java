@@ -10,13 +10,13 @@ package connectDB;
  */
 public interface DatabaseInfo {
     final public static String DRIVERNAME = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    final public static String DBNAMESEVER = "localhost:1433";
-    final public static String DBNAME = "FruitShop";
+    final public static String DBNAMESEVER = "LAPTOP-VFO386TL";
+    final public static String DBNAME = "ElearningDB";
     final public static String DBURL = "jdbc:sqlserver://"
             + DBNAMESEVER
             + ";databaseName="
             + DBNAME
             + ";encrypt=false;trustServerCertificate=true";
     final public static String DBUSER = "sa";
-    final public static String DBPASS = "Huy@31082004";
+    final public static String DBPASS = "admin";
 }

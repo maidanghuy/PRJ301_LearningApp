@@ -29,8 +29,7 @@ public class GoogleLogin {
                                 .add("redirect_uri", Constant.GOOGLE_REDIRECT_URI)
                                 .add("code", code)
                                 .add("grant_type", Constant.GOOGLE_GRANT_TYPE)
-                                .build()
-                )
+                                .build())
                 .execute().returnContent().asString();
 
         JsonObject jobj = new Gson().fromJson(response, JsonObject.class);
@@ -40,7 +39,7 @@ public class GoogleLogin {
         return accessToken;
 
     }
-    
+
     public static GoogleAccount getUserInfo(final String accessToken) throws ClientProtocolException, IOException {
 
         String link = Constant.GOOGLE_LINK_GET_USER_INFO + accessToken;

@@ -24,7 +24,7 @@ public class ConnectDB implements DatabaseInfo {
             System.out.println("Connected to database successfully!");
         } catch (ClassNotFoundException | SQLException e) {
             System.err.println("Error in ConnectDB! (26)");
-
+            System.out.println(e);
         }
     }
 
