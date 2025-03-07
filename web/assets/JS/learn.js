@@ -1,114 +1,111 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//     const lessons = document.querySelectorAll(".lesson"); // Lấy danh sách bài học
+//     const contents = document.querySelectorAll(".lesson-content"); // Lấy nội dung bài học
+
+//     lessons.forEach((lesson) => {
+//         lesson.addEventListener("click", function () {
+//             const lessonId = lesson.getAttribute("data-id"); // Lấy ID bài học
+
+//             // 1️⃣ Ẩn tất cả nội dung bài học
+//             contents.forEach(content => content.classList.remove("lesson-content--active"));
+
+//             // 2️⃣ Hiển thị bài học được chọn
+//             const activeContent = document.querySelector(`.lesson-content[data-id='${lessonId}']`);
+//             if (activeContent) {
+//                 activeContent.classList.add("lesson-content--active");
+//             }
+
+//             // 3️⃣ Cập nhật icon play/pause
+//             lessons.forEach(l => l.querySelector(".lesson__icon i").classList.replace("fa-pause-circle", "fa-play-circle"));
+//             lesson.querySelector(".lesson__icon i").classList.replace("fa-play-circle", "fa-pause-circle");
+
+//             // 4️⃣ Cập nhật tiến trình học
+//             lessons.forEach(l => l.querySelector(".lesson__progress").textContent = "0%");
+//             lesson.querySelector(".lesson__progress").textContent = "100%";
+//         });
+//     });
+// });
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const lessons = document.querySelectorAll(".lesson"); // Lấy danh sách bài học
+//     const contents = document.querySelectorAll(".lesson-content"); // Lấy nội dung bài học
+
+//     // 🟢 Bước 1: Khôi phục tiến trình từ Local Storage (nếu có)
+//     const savedProgress = JSON.parse(localStorage.getItem("lessonProgress")) || {};
+
+//     lessons.forEach(lesson => {
+//         const lessonId = lesson.getAttribute("data-id");
+
+//         // Kiểm tra nếu bài học đã có tiến trình lưu trữ thì cập nhật
+//         if (savedProgress[lessonId]) {
+//             lesson.querySelector(".lesson__progress").textContent = savedProgress[lessonId] + "%";
+//         } else {
+//             lesson.querySelector(".lesson__progress").textContent = "0%"; // Mặc định 0% nếu chưa học
+//         }
+//     });
+
+//     lessons.forEach((lesson) => {
+//         lesson.addEventListener("click", function () {
+//             const lessonId = lesson.getAttribute("data-id"); // Lấy ID bài học
+
+//             // 1️⃣ Ẩn tất cả nội dung bài học
+//             contents.forEach(content => content.classList.remove("lesson-content--active"));
+
+//             // 2️⃣ Hiển thị bài học được chọn
+//             const activeContent = document.querySelector(`.lesson-content[data-id='${lessonId}']`);
+//             if (activeContent) {
+//                 activeContent.classList.add("lesson-content--active");
+//             }
+
+//             // 3️⃣ Cập nhật icon play/pause
+//             lessons.forEach(l => l.querySelector(".lesson__icon i").classList.replace("fa-pause-circle", "fa-play-circle"));
+//             lesson.querySelector(".lesson__icon i").classList.replace("fa-play-circle", "fa-pause-circle");
+
+//             // 4️⃣ Cập nhật tiến trình học
+//             lessons.forEach(l => l.querySelector(".lesson__progress").textContent = "0%");
+//             lesson.querySelector(".lesson__progress").textContent = "100%";
+
+//             // 🟢 Bước 2: Lưu tiến trình vào Local Storage
+//             savedProgress[lessonId] = 100; // Lưu tiến trình 100% cho bài đã học
+//             localStorage.setItem("lessonProgress", JSON.stringify(savedProgress));
+//         });
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
-    const lessons = document.querySelectorAll(".lesson");
-    const lessonContents = document.querySelectorAll(".lesson-content");
+    const lessons = document.querySelectorAll(".lesson"); 
+    const contents = document.querySelectorAll(".lesson-content"); 
 
-    lessons.forEach((lesson) => {
+    // 🟢 Bước 1: Tạo đối tượng để lưu tiến trình học
+    let lessonProgress = {}; // Lưu trạng thái của từng bài học
+
+    lessons.forEach(lesson => {
         lesson.addEventListener("click", function () {
-            // Xóa lớp active của tất cả bài học
-            lessons.forEach((l) => {
-                l.classList.remove("lesson--active");
-
-                // Reset icon của tất cả bài học về "play"
-                const icon = l.querySelector(".lesson__icon i");
-                if (icon) {
-                    icon.classList.remove("fa-pause-circle");
-                    icon.classList.add("fa-play-circle");
-                }
-            });
-
-            // Thêm lớp active cho bài học được chọn
-            lesson.classList.add("lesson--active");
-
-            // Đổi icon của bài học được chọn thành "pause"
-            const selectedIcon = lesson.querySelector(".lesson__icon i");
-            if (selectedIcon) {
-                selectedIcon.classList.remove("fa-play-circle");
-                selectedIcon.classList.add("fa-pause-circle");
-            }
-
-            // Lấy id của bài học được chọn
             const lessonId = lesson.getAttribute("data-id");
 
-            // Dừng tất cả video trước khi chuyển bài học
-            lessonContents.forEach((content) => {
-                const iframe = content.querySelector("iframe");
-                if (iframe) {
-                    iframe.src = iframe.src; // Reset src để dừng video
-                }
-                content.classList.remove("lesson-content--active");
-            });
+            // 1️⃣ Ẩn tất cả nội dung bài học
+            contents.forEach(content => content.classList.remove("lesson-content--active"));
 
-            // Hiện nội dung bài học được chọn
-            document.querySelector(`.lesson-content[data-id='${lessonId}']`).classList.add("lesson-content--active");
+            // 2️⃣ Hiển thị bài học được chọn
+            const activeContent = document.querySelector(`.lesson-content[data-id='${lessonId}']`);
+            if (activeContent) {
+                activeContent.classList.add("lesson-content--active");
+            }
+
+            // 3️⃣ Cập nhật icon play/pause
+            lessons.forEach(l => l.querySelector(".lesson__icon i").classList.replace("fa-pause-circle", "fa-play-circle"));
+            lesson.querySelector(".lesson__icon i").classList.replace("fa-play-circle", "fa-pause-circle");
+
+            // 4️⃣ Cập nhật tiến trình học
+            lessonProgress[lessonId] = 100; // Đánh dấu bài học này là hoàn thành
+
+            // 🔥 Cập nhật giao diện tiến trình
+            lessons.forEach(l => {
+                const id = l.getAttribute("data-id");
+                l.querySelector(".lesson__progress").textContent = lessonProgress[id] ? lessonProgress[id] + "%" : "0%";
+            });
         });
     });
 });
 
 
-//--------------------------------------Cập nhật tiến trình--------------------------------
-// 1. Load YouTube API
-// Load YouTube API
-
-// Load YouTube API
-let tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-let firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// Biến lưu trữ player và intervals
-let players = {};
-let progressIntervals = {};
-
-// Hàm gọi khi YouTube API sẵn sàng
-function onYouTubeIframeAPIReady() {
-    document.querySelectorAll(".lesson-content iframe").forEach(iframe => {
-        let videoId = iframe.src.split("/embed/")[1].split("?")[0]; // Lấy video ID
-        let lessonId = iframe.closest(".lesson-content").getAttribute("data-id"); // Lấy ID bài học
-
-        players[lessonId] = new YT.Player(iframe, {
-            events: {
-                'onStateChange': (event) => trackProgress(event, lessonId),
-                'onReady': () => updateProgress(lessonId) // Cập nhật ngay khi video sẵn sàng
-            }
-        });
-    });
-}
-
-// Hàm theo dõi trạng thái video
-function trackProgress(event, lessonId) {
-    let player = players[lessonId];
-
-    if (event.data === YT.PlayerState.PLAYING) {
-        // Xóa interval cũ nếu có
-        if (progressIntervals[lessonId]) clearInterval(progressIntervals[lessonId]);
-
-        // Tạo interval cập nhật tiến trình mỗi giây
-        progressIntervals[lessonId] = setInterval(() => updateProgress(lessonId), 1000);
-    } else if (event.data === YT.PlayerState.ENDED) {
-        // Nếu video kết thúc, đặt tiến trình 100%
-        updateProgress(lessonId, true);
-        clearInterval(progressIntervals[lessonId]);
-    } else {
-        // Khi video dừng hoặc tạm dừng, không cập nhật nữa
-        if (progressIntervals[lessonId]) clearInterval(progressIntervals[lessonId]);
-    }
-}
-
-// Hàm cập nhật tiến trình
-function updateProgress(lessonId, isEnded = false) {
-    let player = players[lessonId];
-
-    if (player && player.getCurrentTime && player.getDuration) {
-        let currentTime = player.getCurrentTime();
-        let duration = player.getDuration();
-
-        if (!isNaN(currentTime) && !isNaN(duration) && duration > 0) {
-            let progressPercent = isEnded ? 100 : Math.round((currentTime / duration) * 100);
-            let progressElement = document.querySelector(`.lesson[data-id='${lessonId}'] .lesson__progress`);
-
-            if (progressElement) {
-                progressElement.textContent = `${progressPercent}%`;
-            }
-        }
-    }
-}

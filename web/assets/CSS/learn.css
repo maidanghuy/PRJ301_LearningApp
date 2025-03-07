@@ -378,8 +378,9 @@
 
 /* ------------------------- */
 .content{
+    width: 800px;
     position: absolute;
-    right: -185px;
+    right: 26px;
 }
 
 /* css khung youtube */
@@ -392,4 +393,9 @@ iframe{
 .container-custom {
     max-width: 100vw; 
     overflow-x: hidden;
+}
+
+footer{
+    position: relative;
+    z-index: auto;
 }
