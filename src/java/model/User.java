@@ -8,10 +8,11 @@ package model;
  *
  * @author macbookpro
  */
+import java.security.SecureRandom;
 import java.sql.Date;
 
 public class User {
-    
+
     private int userID;
     private String role;
     private String username;
@@ -21,6 +22,9 @@ public class User {
     private String status;
     private Date createdAt;
     private Date updatedAt;
+
+    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%";
+    private static final int PASSWORD_LENGTH = 12;
 
     public User(int userID, String role, String username, String password, String email, Date dateOfBirth, String status) {
         this.userID = userID;
@@ -33,7 +37,7 @@ public class User {
         this.createdAt = new Date(System.currentTimeMillis());
         this.updatedAt = new Date(System.currentTimeMillis());
     }
-    
+
     public User(String role, String username, String password, String email, Date dateOfBirth, String status) {
         this.role = role;
         this.username = username;
@@ -43,6 +47,27 @@ public class User {
         this.status = status;
         this.createdAt = new Date(System.currentTimeMillis());
         this.updatedAt = new Date(System.currentTimeMillis());
+    }
+
+    public User(GoogleAccount googleAccount) {
+        this.username = googleAccount.getEmail();
+        this.email = googleAccount.getEmail();
+        this.role = "Student";
+        this.status = googleAccount.isVerified_email() ? "Active" : "Inactive";
+        this.password = generateRandomPassword();
+        this.createdAt = new Date(System.currentTimeMillis());
+        this.updatedAt = new Date(System.currentTimeMillis());
+    }
+
+    // Hàm tạo mật khẩu ngẫu nhiên
+    private static String generateRandomPassword() {
+        SecureRandom random = new SecureRandom();
+        StringBuilder password = new StringBuilder(PASSWORD_LENGTH);
+
+        for (int i = 0; i < PASSWORD_LENGTH; i++) {
+            password.append(CHARACTERS.charAt(random.nextInt(CHARACTERS.length())));
+        }
+        return password.toString();
     }
 
     // Getters and Setters
@@ -120,15 +145,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userID=" + userID +
-                ", role='" + role + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", status='" + status + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
+        return "User{" + "userID=" + userID + ", role=" + role + ", username=" + username + ", password=" + password + ", email=" + email + ", dateOfBirth=" + dateOfBirth + ", status=" + status + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
+
 }
