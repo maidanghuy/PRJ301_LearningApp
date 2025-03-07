@@ -7,9 +7,8 @@
 
 .container-custom {
     display: flex;
-    max-width: 1440px;
     margin: 0 auto;
-    background-color: var(--bg-color);
+    /* background-color: var(--bg-color); */
 }
 
 .container-left {
@@ -20,6 +19,7 @@
 }
 
 .container-right {
+    position: relative;
     width: calc(100% - 320px);
     padding: 20px 20px 0;
     background-color: #fff;
@@ -31,7 +31,7 @@
 }
 
 .container-1024 {
-    width: 1024px;
+    max-width: 1200px;
     margin: 0 auto 5rem;
 }
 
@@ -42,5 +42,26 @@
 
     .container-1024 {
         width: 100%;
+    }
+}
+
+@media screen and (max-width:991.9px) {
+    .container-left {
+        width: 6rem;
+        padding: 2rem 1rem;
+    }
+
+    .container-right {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767.9px) {
+    .container-left {
+        background-color: transparent;
+        width: 0;
+        padding: 2rem 0;
+        position: relative;
+        z-index: 1;
     }
 }

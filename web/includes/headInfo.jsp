@@ -13,8 +13,13 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap"
     rel="stylesheet" />
-
+<!-- CDN BS5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Kit chuyen chu thanh icone -->
+
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
 
 <!-- Import FontAwesome để sử dụng icon -->
 <script src="https://kit.fontawesome.com/9c4f371355.js" crossorigin="anonymous"></script>
@@ -25,3 +30,5 @@
 <link rel="stylesheet" href="./assets/CSS/global.css" />
 <!-- global.css: Chứa các biến CSS chung cho trang -->
 <link rel="stylesheet" href="./assets/CSS/root.css" />
+<!-- chatbot.css: Chứa các biến CSS chatbot -->
+<link rel="stylesheet" href="./assets/CSS/chatbot.css" />
