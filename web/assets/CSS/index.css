@@ -139,11 +139,9 @@
   justify-items: center;
 }
 
-.feature {
-}
+.feature {}
 
-.feature--item {
-}
+.feature--item {}
 
 .feature__icon {
   width: 7rem;
@@ -158,8 +156,7 @@
   margin-bottom: 2rem;
 }
 
-.feature__icon img {
-}
+.feature__icon img {}
 
 .feature__text {
   color: #7b7d81;
