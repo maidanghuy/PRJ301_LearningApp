@@ -18,7 +18,7 @@ public class LessonDAO {
         try {
             conn = connectDB.getConnection();
         } catch (Exception e) {
-            System.err.println("Error in CustomerDAO! (23)");
+            System.out.println(e);
         }
     }
 }
