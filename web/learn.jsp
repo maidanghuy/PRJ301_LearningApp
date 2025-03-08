@@ -60,16 +60,20 @@
                                                 allowfullscreen></iframe>
                                         </c:if>
 
-                                    <!-- Hiển thị filePath nếu contentType là Vocabulary, Grammar hoặc Reading -->
-                                    <c:if test="${not empty c.contentType and not empty c.filePath 
-                                                  and (c.contentType eq 'Vocabulary' or c.contentType eq 'Grammar' or c.contentType eq 'Reading')}">
-                                          <div class="lesson-file">
-                                              <a href="${c.filePath}" target="_blank">📄 Tải tài liệu</a>
-                                          </div>
-                                    </c:if>
-
                                     <h2 class="lesson-detail__title">${c.title}</h2>
                                     <p class="lesson-detail__description">${c.describe}</p>
+
+                                     <!-- Hiển thị filePath nếu contentType là Vocabulary, Grammar hoặc Reading -->
+                                     <c:if test="${not empty c.contentType and not empty c.filePath 
+                                        and (c.contentType eq 'Vocabulary' or c.contentType eq 'Grammar' or c.contentType eq 'Reading')}">
+                                <div class="lesson-file">
+                                    <!-- <button><a href="${c.filePath}" target="_blank">Down LOad</a></button> -->
+                                    <a href="${c.filePath}" class="download-btn">
+                                      <i class="fas fa-download"></i>
+                                      Download tài liệu
+                                  </a>
+                                </div>
+                          </c:if>
                                 </div>
                             </c:forEach>
                         </main>
