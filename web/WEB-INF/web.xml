@@ -8,12 +8,16 @@
         <servlet-name>DivideActionServlet</servlet-name>
         <servlet-class>controller.DivideActionServlet</servlet-class>
     </servlet>
-    <servlet>
+    <!--    <servlet>
         <servlet-name>DivideActionServlet</servlet-name>
         <servlet-class>controller.DivideActionServlet</servlet-class>
-    </servlet>
+    </servlet>-->
     <servlet>
         <servlet-name>LoadContentServlet</servlet-name>
+        <servlet-class>controller.LoadContentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadContentServlet2</servlet-name>
         <servlet-class>controller.LoadContentServlet</servlet-class>
     </servlet>
     <servlet-mapping>
@@ -23,5 +27,13 @@
     <servlet-mapping>
         <servlet-name>DivideActionServlet</servlet-name>
         <url-pattern>/DivideActionServlet</url-pattern>
+    </servlet-mapping>
+    <!--    <servlet-mapping>
+        <servlet-name>LoadContentServlet</servlet-name>
+        <url-pattern>/LoadContentServlet</url-pattern>
+    </servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>LoadContentServlet2</servlet-name>
+        <url-pattern>/LoadContent</url-pattern>
     </servlet-mapping>
 </web-app>

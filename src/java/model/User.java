@@ -8,18 +8,11 @@ package model;
  *
  * @author macbookpro
  */
-<<<<<<< HEAD
-import java.sql.Date;
-
-public class User {
-    
-=======
 import java.security.SecureRandom;
 import java.sql.Date;
 
 public class User {
 
->>>>>>> d15b9b3f78d5c60a25cdd15e302b0e0ccac5f544
     private int userID;
     private String role;
     private String username;
@@ -30,12 +23,9 @@ public class User {
     private Date createdAt;
     private Date updatedAt;
 
-<<<<<<< HEAD
-=======
     private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%";
     private static final int PASSWORD_LENGTH = 12;
 
->>>>>>> d15b9b3f78d5c60a25cdd15e302b0e0ccac5f544
     public User(int userID, String role, String username, String password, String email, Date dateOfBirth, String status) {
         this.userID = userID;
         this.role = role;
@@ -47,11 +37,6 @@ public class User {
         this.createdAt = new Date(System.currentTimeMillis());
         this.updatedAt = new Date(System.currentTimeMillis());
     }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> d15b9b3f78d5c60a25cdd15e302b0e0ccac5f544
     public User(String role, String username, String password, String email, Date dateOfBirth, String status) {
         this.role = role;
         this.username = username;
@@ -63,8 +48,6 @@ public class User {
         this.updatedAt = new Date(System.currentTimeMillis());
     }
 
-<<<<<<< HEAD
-=======
     public User(GoogleAccount googleAccount) {
         this.username = googleAccount.getEmail();
         this.email = googleAccount.getEmail();
@@ -86,7 +69,6 @@ public class User {
         return password.toString();
     }
 
->>>>>>> d15b9b3f78d5c60a25cdd15e302b0e0ccac5f544
     // Getters and Setters
     public int getUserID() {
         return userID;
@@ -162,21 +144,7 @@ public class User {
 
     @Override
     public String toString() {
-<<<<<<< HEAD
-        return "User{" +
-                "userID=" + userID +
-                ", role='" + role + '\'' +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", status='" + status + '\'' +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                '}';
-    }
-=======
         return "User{" + "userID=" + userID + ", role=" + role + ", username=" + username + ", password=" + password + ", email=" + email + ", dateOfBirth=" + dateOfBirth + ", status=" + status + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
     }
 
->>>>>>> d15b9b3f78d5c60a25cdd15e302b0e0ccac5f544
 }
