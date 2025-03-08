@@ -37,7 +37,6 @@ public class User {
         this.createdAt = new Date(System.currentTimeMillis());
         this.updatedAt = new Date(System.currentTimeMillis());
     }
-
     public User(String role, String username, String password, String email, Date dateOfBirth, String status) {
         this.role = role;
         this.username = username;
