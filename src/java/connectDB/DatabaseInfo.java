@@ -10,7 +10,7 @@ package connectDB;
  */
 public interface DatabaseInfo {
     final public static String DRIVERNAME = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    final public static String DBNAMESEVER = "LAPTOP-VFO386TL";
+    final public static String DBNAMESEVER = "LAPTOP-T6IRBKEV";
     final public static String DBNAME = "ElearningDB";
     final public static String DBURL = "jdbc:sqlserver://"
             + DBNAMESEVER
@@ -19,4 +19,5 @@ public interface DatabaseInfo {
             + ";encrypt=false;trustServerCertificate=true";
     final public static String DBUSER = "sa";
     final public static String DBPASS = "admin";
+    
 }

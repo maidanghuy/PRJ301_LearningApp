@@ -22,8 +22,11 @@ import modelDAO.UserDAO;
  *
  * @author macbookpro
  */
-@WebServlet(urlPatterns = {"/divide"})
+//@WebServlet(urlPatterns = {"/divide"})/
 public class DivideActionServlet extends HttpServlet {
+
+    public DivideActionServlet() {
+    }
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
