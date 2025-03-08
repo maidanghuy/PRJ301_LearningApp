@@ -12,6 +12,7 @@
     </head>
 
     <body>
+
         <div class="container-custom">
             <div class="container-left">
                 <%@ include file="./includes/navbar.jsp" %>
@@ -27,8 +28,13 @@
                 </footer>
             </div>
         </div>
+        <%@ include file="./includes/chatbot.jsp" %>
+        <!-- Emoji Picker -->
+        <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/JS/index.js"></script>
+        <script type="module" src="./assets/JS/chatbot.js"></script>
+
 
     </body>
 

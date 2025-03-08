@@ -8,26 +8,30 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.GoogleAccount;
+import model.User;
+import modelDAO.UserDAO;
 
 /**
  *
  * @author macbookpro
  */
-@WebServlet(urlPatterns = { "/login" })
-public class LoginServlet extends HttpServlet {
+@WebServlet(urlPatterns = {"/login"})
+public class LoginGoogleServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request  servlet request
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -40,9 +44,26 @@ public class LoginServlet extends HttpServlet {
 
         GoogleAccount acc = gg.getUserInfo(accessToken);
         System.out.println(acc);
-        // co tk da duoc dky chua
-        // getAccount by email da co tk thi login va luu sesseion
-        // neu chua co thi tao tk voi random password
+        User user = new User(acc);
+//        System.out.println(user);
+
+        UserDAO udao = new UserDAO();
+        if (!udao.isUsernameExists(acc.getEmail())) {
+            udao = new UserDAO();
+            udao.registerUser(user);
+        }
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("user", user);
+        session.setMaxInactiveInterval(30 * 60); // 30 phút
+
+        // Tạo cookie lưu trong 3 tháng
+        Cookie userCookie = new Cookie("username", user.getUsername());
+        userCookie.setMaxAge(60 * 60 * 24 * 90); // 90 ngày
+        response.addCookie(userCookie);
+
+        // Chuyển hướng đến trang chính
+        response.sendRedirect("landingpage.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
@@ -50,10 +71,10 @@ public class LoginServlet extends HttpServlet {
     /**
      * Handles the HTTP <code>GET</code> method.
      *
-     * @param request  servlet request
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -64,10 +85,10 @@ public class LoginServlet extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
-     * @param request  servlet request
+     * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException      if an I/O error occurs
+     * @throws IOException if an I/O error occurs
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
