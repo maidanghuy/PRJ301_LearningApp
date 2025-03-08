@@ -26,7 +26,8 @@ public class CourseDao {
         try {
             conn = connectDB.getConnection();
         } catch (Exception e) {
-            System.err.println("Error in CustomerDAO! (23)");
+                        System.out.println(e);
+
         }
     }
 
@@ -48,8 +49,8 @@ public class CourseDao {
                 String level = result.getString(4);
                 Date createdAt = result.getDate(5);
                 Date updatedAt = result.getDate(6);
-
-                Course cus = new Course(courseID, courseName, description, level, createdAt, updatedAt);
+                String linkimg = result.getString(10);
+                Course cus = new Course(courseID, courseName, description, level, createdAt, updatedAt, linkimg);
 
                 courseL.add(cus);
             }
@@ -78,8 +79,8 @@ public class CourseDao {
                 String level = result.getString(4);
                 Date createdAt = result.getDate(5);
                 Date updatedAt = result.getDate(6);
-
-                course = new Course(courseID, courseName, description, level, createdAt, updatedAt);
+                String linkimg = result.getString(10);
+                Course cus = new Course(courseID, courseName, description, level, createdAt, updatedAt, linkimg);
             }
         } catch (Exception e) {
             System.err.println("error: " + e);

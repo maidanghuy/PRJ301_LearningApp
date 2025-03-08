@@ -17,18 +17,30 @@ public class Course implements java.io.Serializable{
     private String level;
     private Date createdAt;
     private Date updatedAt;
+    private String linkimg;
+    
 
     public Course() {
     }
 
-    public Course(int courseID, String courseName, String description, String level, Date createdAt, Date updatedAt) {
+    public Course(int courseID, String courseName, String description, String level, Date createdAt, Date updatedAt, String linkimg) {
         this.courseID = courseID;
         this.courseName = courseName;
         this.description = description;
         this.level = level;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+        this.linkimg = linkimg;
     }
+
+    public String getLinkimg() {
+        return linkimg;
+    }
+
+    public void setLinkimg(String linkimg) {
+        this.linkimg = linkimg;
+    }
+
 
     public int getCourseID() {
         return courseID;
@@ -88,9 +100,12 @@ public class Course implements java.io.Serializable{
         sb.append(", level=").append(level);
         sb.append(", createdAt=").append(createdAt);
         sb.append(", updatedAt=").append(updatedAt);
+        sb.append(", linkimg=").append(linkimg);
         sb.append('}');
         return sb.toString();
     }
+
+    
 
     
     

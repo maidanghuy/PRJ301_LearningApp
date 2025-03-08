@@ -2,3 +2,4 @@
 /dist/
 /.env
 /src/java/constant/IConstant.java
+/web/assets/JS/config.js
