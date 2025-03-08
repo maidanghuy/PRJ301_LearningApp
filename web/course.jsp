@@ -35,7 +35,7 @@
                             <img src="https://s3-alpha-sig.figma.com/img/78dd/212c/1115df0d52a13e3a27cc8735ecd36e2c?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Jl5qZxx~nfaFaIbbPfKGvxkL6ZxF9maOzp-IYbm6ml4eM3RuDyQJfqCE-70pLr57KL1hrt9X5jN3LzzYDXmeEZpB4rVpJz4UO5hQ500ckjIIhWbyKy8Y9gDTFrwPFvgyxqQU8wUqe78c4EJmfroYskwGSiFcUwVcUcBQlLGqUTLj26PYhVW0s3nv2lZi5JgCLTLLyTaYbTZuN9gANiprjjSO2SaM8Z3c5Qys4vqFEfbxTGjJHuCVWbRlIRCo6IHZoSkNKX43LPcUxlmXnDVLn8BMrKXuIbWMYCYI8BKjhFz52JaLv4aO9-Cl6I5x9CTXNjRGOQ6VzMswJ0cd4HgYOg__"
                                  alt="IELTS_Beginer" class="course_banner_img" />
                             <div class="course__info">
-                                <h1 class="course__title">COURSE</h1>
+                                <h1 class="course__title">Khóa học offline</h1>
                                 <p class="course__description">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy
                                     nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
@@ -72,7 +72,7 @@
                                 <img src="<%= course.getLinkimg()  %>" alt="<%= course.getCourseName() %>" class="course-img">
                                 <h3><%= course.getCourseName()%></h3>
                                 <p><strong>Level</strong> <%= course.getLevel()%></p>
-                                <a href=""><button class="detail-btn">Xem chi tiết</button></a>
+                                <button class="detail-btn">Xem chi tiết</button>
                             </div>
                             <%
                                 }
