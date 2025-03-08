@@ -48,8 +48,8 @@ public class CourseDao {
                 String level = result.getString(4);
                 Date createdAt = result.getDate(5);
                 Date updatedAt = result.getDate(6);
-
-                Course cus = new Course(courseID, courseName, description, level, createdAt, updatedAt);
+                String linkimg = result.getString(10);
+                Course cus = new Course(courseID, courseName, description, level, createdAt, updatedAt, linkimg);
 
                 courseL.add(cus);
             }
@@ -78,8 +78,8 @@ public class CourseDao {
                 String level = result.getString(4);
                 Date createdAt = result.getDate(5);
                 Date updatedAt = result.getDate(6);
-
-                course = new Course(courseID, courseName, description, level, createdAt, updatedAt);
+                String linkimg = result.getString(10);
+                Course cus = new Course(courseID, courseName, description, level, createdAt, updatedAt, linkimg);
             }
         } catch (Exception e) {
             System.err.println("error: " + e);
@@ -90,15 +90,15 @@ public class CourseDao {
     public static void main(String[] args) {
         CourseDao stdao = new CourseDao();
         //Test lay toan bo khoa hoc
-//        List<Course> list = new ArrayList<>();
-//        list = stdao.getAll();
-//        for (Course c : list) {
-//            System.out.println(list);
-//        }
+        List<Course> list = new ArrayList<>();
+        list = stdao.getAll();
+        for (Course c : list) {
+            System.out.println(c);
+        }
 
         //Test lay khoa hoc bang ID lam ve thong tin mo ta
-        Course cour = new Course();
-        cour=stdao.getByCourseID(2);
-        System.out.println(cour);
+//        Course cour = new Course();
+//        cour=stdao.getByCourseID(2);
+//        System.out.println(cour);
     }
 }

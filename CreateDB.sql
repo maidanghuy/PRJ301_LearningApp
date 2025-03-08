@@ -40,9 +40,35 @@ CREATE TABLE Courses
     createdAt DATETIME DEFAULT GETDATE(),
     -- Ngày tạo khóa học
     updatedAt DATETIME DEFAULT GETDATE()
-    -- Ngày cập nhật khóa học
+    -- Ngày cập nhật khóa hoc
 );
 
+ALTER TABLE Courses 
+ADD 
+    details NVARCHAR(MAX), 
+    -- Thông tin chi tiết về khóa học
+
+    learningPathway NVARCHAR(MAX) 
+    -- Lộ trình học (lưu dưới dạng JSON)
+
+;
+
+ALTER TABLE Courses 
+ADD 
+
+
+	commitment  NVARCHAR(MAX) 
+;
+
+
+ALTER TABLE Courses 
+ADD 
+    linkimg NVARCHAR(MAX), 
+    -- Thông tin chi tiết về khóa học
+
+    
+
+;
 -- Bảng User_Course (Liên kết người dùng và khóa học)
 CREATE TABLE User_Course
 (
