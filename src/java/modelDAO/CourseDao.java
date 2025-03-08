@@ -90,15 +90,15 @@ public class CourseDao {
     public static void main(String[] args) {
         CourseDao stdao = new CourseDao();
         //Test lay toan bo khoa hoc
-//        List<Course> list = new ArrayList<>();
-//        list = stdao.getAll();
-//        for (Course c : list) {
-//            System.out.println(list);
-//        }
+        List<Course> list = new ArrayList<>();
+        list = stdao.getAll();
+        for (Course c : list) {
+            System.out.println(c);
+        }
 
         //Test lay khoa hoc bang ID lam ve thong tin mo ta
-        Course cour = new Course();
-        cour=stdao.getByCourseID(2);
-        System.out.println(cour);
+//        Course cour = new Course();
+//        cour=stdao.getByCourseID(2);
+//        System.out.println(cour);
     }
 }
