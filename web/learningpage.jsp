@@ -10,7 +10,7 @@
         <!-- styles.css: Chứa các quy tắc CSS chính của trang -->
         <link rel="stylesheet" href="./assets/CSS/index.css" />
     </head>
-   
+
 
     <body>
         <c:if test="${featureMessage == false}">

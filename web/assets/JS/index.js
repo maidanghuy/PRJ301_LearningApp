@@ -1,14 +1,24 @@
-const sidebarItems = document.querySelectorAll(".sidebar__item");
-
-sidebarItems.forEach(item => {
+// Khi click vào item, lưu trạng thái vào sessionStorage
+document.querySelectorAll(".sidebar__item").forEach(item => {
     item.addEventListener("click", function () {
-        // Xóa class 'sidebar__item--active' khỏi tất cả các mục
-        sidebarItems.forEach(i => i.classList.remove("sidebar__item--active"));
-
-        // Thêm class 'sidebar__item--active' cho mục được click
-        this.classList.add("sidebar__item--active");
+        sessionStorage.setItem("activeSidebar", this.href);
     });
 });
+
+// Khi tải lại trang, lấy trạng thái từ sessionStorage
+window.addEventListener("load", function () {
+    const savedSidebar = sessionStorage.getItem("activeSidebar");
+    if (savedSidebar) {
+        document.querySelectorAll(".sidebar__item").forEach(item => {
+            if (item.href === savedSidebar) {
+                item.classList.add("sidebar__item--active");
+            } else {
+                item.classList.remove("sidebar__item--active");
+            }
+        });
+    }
+});
+
 
 
 // Kiểm tra nếu có logoutSuccess trên URL thì hiển thị thông báo
