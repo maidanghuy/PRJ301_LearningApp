@@ -19,5 +19,5 @@ public interface DatabaseInfo {
             + ";encrypt=false;trustServerCertificate=true";
     final public static String DBUSER = "sa";
     final public static String DBPASS = "Huy@31082004";
-    
+
 }

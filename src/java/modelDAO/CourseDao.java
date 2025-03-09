@@ -63,43 +63,45 @@ public class CourseDao {
     }
 
     public Course getByCourseID(int courseID) {
-        String sql = "select *from [dbo].[Courses] c where c.courseID=?";
-        Course course = new Course();
+        String sql = "SELECT * FROM [dbo].[Courses] WHERE courseID = ?";
+        Course course = null; 
 
-        try {
-            //Khay chua cau lenh
-            PreparedStatement pre = conn.prepareStatement(sql);
-
+        try (PreparedStatement pre = conn.prepareStatement(sql)) { 
             pre.setInt(1, courseID);
-            //Chay cau lenh va tao khay chua ketqua
-            ResultSet result = pre.executeQuery();
-            while (result.next()) {
-                String courseName = result.getString(2);
-                String description = result.getString(3);
-                String level = result.getString(4);
-                Date createdAt = result.getDate(5);
-                Date updatedAt = result.getDate(6);
-                String linkimg = result.getString(10);
-                Course cus = new Course(courseID, courseName, description, level, createdAt, updatedAt, linkimg);
+            try (ResultSet result = pre.executeQuery()) {
+                if (result.next()) { 
+                    String courseName = result.getString(2);
+                    String description = result.getString(3);
+                    String level = result.getString(4);
+                    Date createdAt = result.getDate(5);
+                    Date updatedAt = result.getDate(6);
+                    String details = result.getString(7);
+                    String learningPathway = result.getString(8);
+                    String commit = result.getString(9);
+                    String linkimg = result.getString(10);
+
+                    course = new Course(courseID, courseName, description, level, createdAt, updatedAt, details, learningPathway, commit, linkimg);
+                }
             }
         } catch (Exception e) {
-            System.err.println("error: " + e);
+            e.printStackTrace(); // Nên dùng e.printStackTrace() để dễ debug hơn
         }
-        return course;
+        return course; // Trả về null nếu không tìm thấy
     }
+
 
     public static void main(String[] args) {
         CourseDao stdao = new CourseDao();
-        //Test lay toan bo khoa hoc
-        List<Course> list = new ArrayList<>();
-        list = stdao.getAll();
-        for (Course c : list) {
-            System.out.println(c);
-        }
+//        //Test lay toan bo khoa hoc
+//        List<Course> list = new ArrayList<>();
+//        list = stdao.getAll();
+//        for (Course c : list) {
+//            System.out.println(c);
+//        }
 
         //Test lay khoa hoc bang ID lam ve thong tin mo ta
-//        Course cour = new Course();
-//        cour=stdao.getByCourseID(2);
-//        System.out.println(cour);
+        Course cour = new Course();
+        cour=stdao.getByCourseID(1);
+        System.out.println(cour);
     }
 }

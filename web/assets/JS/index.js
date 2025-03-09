@@ -13,7 +13,7 @@ sidebarItems.forEach(item => {
 
 // Kiểm tra nếu có logoutSuccess trên URL thì hiển thị thông báo
 const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.has('logoutSuccess')) {
+if (urlParams.get('action') === 'logout') {
     alert("Bạn đã đăng xuất thành công!");
     // Xóa logoutSuccess khỏi URL để không hiển thị lại khi refresh trang
     window.history.replaceState({}, document.title, window.location.pathname);

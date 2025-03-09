@@ -17,7 +17,11 @@ public class Course implements java.io.Serializable{
     private String level;
     private Date createdAt;
     private Date updatedAt;
+    private String details;
+    private String learningPathway;
+    private String commit;
     private String linkimg;
+    
     
 
     public Course() {
@@ -32,6 +36,45 @@ public class Course implements java.io.Serializable{
         this.updatedAt = updatedAt;
         this.linkimg = linkimg;
     }
+
+    public Course(int courseID, String courseName, String description, String level, Date createdAt, Date updatedAt, String details, String learningPathway, String commit, String linkimg) {
+        this.courseID = courseID;
+        this.courseName = courseName;
+        this.description = description;
+        this.level = level;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.details = details;
+        this.learningPathway = learningPathway;
+        this.commit = commit;
+        this.linkimg = linkimg;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
+    public String getLearningPathway() {
+        return learningPathway;
+    }
+
+    public void setLearningPathway(String learningPathway) {
+        this.learningPathway = learningPathway;
+    }
+
+    public String getCommit() {
+        return commit;
+    }
+
+    public void setCommit(String commit) {
+        this.commit = commit;
+    }
+
+    
 
     public String getLinkimg() {
         return linkimg;

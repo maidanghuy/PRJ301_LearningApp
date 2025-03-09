@@ -23,25 +23,25 @@
     <nav class="sidebar__nav">
         <div class="sidebar__item sidebar__item--active">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/Icon.svg" alt="Home" />
-            <a href="#" class="sidebar__link">
+            <a href="view?action=home" class="sidebar__link">
                 <span class="sidebar__text">Home</span>
             </a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/Book.svg" alt="Document" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Material</span></a>
+            <a href="view?action=meterial" class="sidebar__link"><span class="sidebar__text">Material</span></a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/Leaf.svg" alt="Course-Online" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Course</span></a>
+            <a href="view?action=course" class="sidebar__link"><span class="sidebar__text">Course</span></a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/News.svg" alt="Testing" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Test</span></a>
+            <a href="view?action=test" class="sidebar__link"><span class="sidebar__text">Test</span></a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/User.svg" alt="User-Information" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Account</span></a>
+            <a href="view?action=account" class="sidebar__link"><span class="sidebar__text">Account</span></a>
         </div>
     </nav>
 </div>
@@ -53,25 +53,25 @@
     <nav class="sidebar__nav">
         <div class="sidebar__item sidebar__item--active">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/Icon.svg" alt="Home" />
-            <a href="#" class="sidebar__link">
+            <a href="view?action=home" class="sidebar__link">
                 <span class="sidebar__text">Home</span>
             </a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/Book.svg" alt="Document" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Material</span></a>
+            <a href="view?action=material" class="sidebar__link"><span class="sidebar__text">Material</span></a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/Leaf.svg" alt="Course-Online" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Course</span></a>
+            <a href="view?action=course" class="sidebar__link"><span class="sidebar__text">Course</span></a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/News.svg" alt="Testing" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Test</span></a>
+            <a href="view?action=test" class="sidebar__link"><span class="sidebar__text">Test</span></a>
         </div>
         <div class="sidebar__item">
             <img class="sidebar__icon" src="./assets/images/navbar_icon/User.svg" alt="User-Information" />
-            <a href="#" class="sidebar__link"><span class="sidebar__text">Account</span></a>
+            <a href="view?action=account" class="sidebar__link"><span class="sidebar__text">Account</span></a>
         </div>
     </nav>
 </div>

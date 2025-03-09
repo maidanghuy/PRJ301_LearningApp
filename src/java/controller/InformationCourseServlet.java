@@ -7,17 +7,19 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import model.Course;
+import modelDAO.CourseDao;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
- * @author ADMIN
+ * @author Asus
  */
-@WebServlet(name = "NewServlet", urlPatterns = {"/NewServlet"})
-public class NewServlet extends HttpServlet {
+public class InformationCourseServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,10 +38,10 @@ public class NewServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");
+            out.println("<title>Servlet InformationCourseServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet InformationCourseServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -57,7 +59,27 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int id = Integer.parseInt(request.getParameter("id"));
+        CourseDao dao = new CourseDao();
+        Course course = dao.getByCourseID(id);
+
+        String learningPathway = course.getLearningPathway(); // Chuỗi String từ DB
+        Map<String, String> learningPathwayMap = new HashMap<>();
+
+        // Tách các phần tử theo dấu ","
+        String[] parts = learningPathway.split(",");
+        for (String part : parts) {
+            String[] keyValue = part.split(":"); // Tách key và value theo dấu ":"
+            if (keyValue.length == 2) {
+                String key = keyValue[0].trim(); // Tên khóa học
+                String value = keyValue[1].trim(); // Nội dung khóa học
+                learningPathwayMap.put(key, value);
+            }
+        }
+
+        request.setAttribute("course", course);
+        request.setAttribute("learningPathway", learningPathwayMap);
+        request.getRequestDispatcher("InformationCourse.jsp").forward(request, response);
     }
 
     /**

@@ -22,7 +22,7 @@ import modelDAO.UserDAO;
  *
  * @author macbookpro
  */
-@WebServlet(urlPatterns = {"/divide"})
+@WebServlet(urlPatterns = {"/view/*"})
 public class DivideActionServlet extends HttpServlet {
 
     public DivideActionServlet() {
@@ -70,21 +70,32 @@ public class DivideActionServlet extends HttpServlet {
         String action = String.valueOf(request.getParameter("action"));
 
         switch (action) {
-            case "next-editCustomer" -> {
+            case "home" -> {
+                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
             }
-            case "next-updateFruit" -> {
+            case "material" -> {
+                request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
+                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
             }
-            case "deleteFruit" -> {
+            case "course" -> {
+                request.getRequestDispatcher("course").forward(request, response);
             }
-            case "deleteCustomer" -> {
+            case "test" -> {
+                request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
+                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
+            }
+            case "account" -> {
+                request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
+                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
             }
             case "logout" -> {
                 if (request.getSession(false) != null) {
                     request.getSession().invalidate();
-                    response.sendRedirect("landingpage.jsp?logoutSuccess=true");
+                    request.getRequestDispatcher("learningpage.jsp").forward(request, response);
                 }
             }
             default -> {
+                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
             }
         }
     }
@@ -142,7 +153,7 @@ public class DivideActionServlet extends HttpServlet {
             response.addCookie(userCookie);
 
             // Chuyển hướng đến trang chính
-            response.sendRedirect("landingpage.jsp");
+            response.sendRedirect("learningpage.jsp");
         } else {
             // Đăng nhập thất bại, chuyển hướng về trang login với thông báo lỗi
             request.setAttribute("error", "Sai tài khoản hoặc mật khẩu!");

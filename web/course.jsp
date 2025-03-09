@@ -72,7 +72,9 @@
                                 <img src="<%= course.getLinkimg()  %>" alt="<%= course.getCourseName() %>" class="course-img">
                                 <h3><%= course.getCourseName()%></h3>
                                 <p><strong>Level</strong> <%= course.getLevel()%></p>
-                                <button class="detail-btn">Xem chi tiết</button>
+                                <a href="details?id=<%= course.getCourseID() %>">
+                                    <button class="detail-btn">Xem chi tiết</button>
+                                </a>
                             </div>
                             <%
                                 }

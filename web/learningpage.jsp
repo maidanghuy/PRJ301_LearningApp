@@ -10,8 +10,14 @@
         <!-- styles.css: Chứa các quy tắc CSS chính của trang -->
         <link rel="stylesheet" href="./assets/CSS/index.css" />
     </head>
+   
 
     <body>
+        <c:if test="${featureMessage == false}">
+            <script>
+                alert("Tính năng này chưa có sẵn!");
+            </script>
+        </c:if>
         <div class="container-custom">
             <div class="container-left">
                 <%@ include file="./includes/navbar.jsp" %>
