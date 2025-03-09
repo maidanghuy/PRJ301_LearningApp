@@ -5,7 +5,9 @@
 
         <div class="container-1024">
             <div class="wrapper__banner">
-                <img class="banner__image" src="./assets/images/banner.png" alt="Banner SVG">
+                <div class="banner__slides">
+                    <img class="banner__image" src="./assets/images/banner/banner.png" alt="Banner 1">
+                </div>
                 <div class="banner__content">
                     <h1 class="banner__title title">G-Easy Learning!</h1>
                     <p class="banner__description">
