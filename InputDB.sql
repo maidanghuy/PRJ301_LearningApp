@@ -2,21 +2,22 @@
 INSERT INTO Users
     (role, username, password, email, dateOfBirth, status)
 VALUES
-    ('Student', 'maidanghuy', 'password_123', 'maidanghuy@example.com', '2004-05-15', 'Active'),
-    ('Student', 'nguyenlequan', 'password_456', 'nguyenlequan@example.com', '2003-07-20', 'Active'),
-    ('Teacher', 'hoangminhhien', 'password_789', 'hoangminhhien@example.com', '1985-11-30', 'Active'),
-    ('Student', 'trandinhquy', 'password_321', 'trandinhquy@example.com', '2005-01-10', 'Active'),
-    ('Teacher', 'admin', 'password_654', 'admin@example.com', '1990-09-25', 'Inactive');
+    ('Student', 'maidanghuy', '123123', 'maidanghuy@example.com', '2004-05-15', 'Active'),
+    ('Student', 'nguyenlequan', '123123', 'nguyenlequan@example.com', '2003-07-20', 'Active'),
+    ('Teacher', 'hoangminhhien', '123123', 'hoangminhhien@example.com', '1985-11-30', 'Active'),
+    ('Student', 'trandinhquy', '123123', 'trandinhquy@example.com', '2005-01-10', 'Active'),
+    ('Teacher', 'admin', '123123', 'admin@example.com', '1990-09-25', 'Inactive');
 
 -- Chèn dữ liệu vào bảng Courses (Khóa học ngoại ngữ)
+-- Insert data into the Courses table
 INSERT INTO Courses
     (courseName, description, level)
 VALUES
-    ('Tiếng Anh Cơ Bản', 'Khóa học dành cho người mới bắt đầu học tiếng Anh, bao gồm phát âm, từ vựng và ngữ pháp cơ bản.', 'Beginner'),
-    ('Tiếng Anh Giao Tiếp', 'Giúp học viên cải thiện khả năng giao tiếp hàng ngày bằng tiếng Anh.', 'Intermediate'),
-    ('Luyện Thi IELTS', 'Khóa học cung cấp chiến lược và bài tập thực hành cho kỳ thi IELTS.', 'Advanced'),
-    ('Tiếng Nhật N5', 'Khóa học giúp học viên làm quen với bảng chữ cái Hiragana, Katakana và ngữ pháp cơ bản.', 'Beginner'),
-    ('Tiếng Nhật N4', 'Mở rộng vốn từ vựng, ngữ pháp và luyện tập kỹ năng đọc hiểu tiếng Nhật ở trình độ N4.', 'Intermediate');
+    ('Basic English', 'A course designed for beginners to learn English, including pronunciation, vocabulary, and basic grammar.', 'Beginner'),
+    ('English Communication', 'Helps learners improve their daily communication skills in English.', 'Intermediate'),
+    ('IELTS Preparation', 'Provides strategies and practice exercises for the IELTS exam.', 'Advanced'),
+    ('Japanese N5', 'Introduces learners to the Hiragana, Katakana alphabets and basic grammar.', 'Beginner'),
+    ('Japanese N4', 'Expands vocabulary, grammar, and reading comprehension skills for the N4 level.', 'Intermediate');
 
 UPDATE Courses
 SET 
@@ -337,36 +338,26 @@ VALUES
 INSERT INTO Lesson
     (courseID, lessonTitle, content, duration, createdAt)
 VALUES
-    (1, 'IELTS Vocabulary Essentials', 'Bài học về từ vựng quan trọng trong IELTS', 45, GETDATE()),
-    (1, 'Grammar for IELTS Writing', 'Tổng hợp ngữ pháp quan trọng cho phần Writing', 50, GETDATE()),
-    (1, 'Effective Reading Techniques', 'Phương pháp đọc hiểu hiệu quả trong IELTS', 60, GETDATE()),
-    (1, 'IELTS Listening Strategies', 'Chiến lược làm bài nghe hiệu quả', 40, GETDATE());
-
+    (1, 'IELTS Vocabulary Essentials', 'Lesson on essential vocabulary for IELTS', 45, GETDATE()),
+    (1, 'Grammar for IELTS Writing', 'Compilation of essential grammar for the Writing section', 50, GETDATE()),
+    (1, 'Effective Reading Techniques', 'Techniques for effective reading comprehension in IELTS', 60, GETDATE()),
+    (1, 'IELTS Listening Strategies', 'Effective strategies for IELTS listening', 40, GETDATE());
 
 INSERT INTO Lesson_Content
     (lessonID, contentID)
 VALUES
-    -- Liên kết bài học từ vựng với nội dung từ vựng
+    -- Link vocabulary lesson with vocabulary content
     (1, 1),
     (1, 2),
 
-    -- Liên kết bài học ngữ pháp với nội dung ngữ pháp
+    -- Link grammar lesson with grammar content
     (2, 3),
     (2, 4),
 
-    -- Liên kết bài học đọc hiểu với nội dung đọc hiểu
+    -- Link reading comprehension lesson with reading content
     (3, 5),
     (3, 6),
 
-    -- Liên kết bài học nghe với nội dung nghe
+    -- Link listening lesson with listening content
     (4, 7),
     (4, 8);
-
--- DELETE FROM Lesson_Content;
--- -- Xóa dữ liệu liên kết trước
--- DELETE FROM Content;
--- DELETE FROM Lesson;
-
--- DBCC CHECKIDENT ('Lesson', RESEED, 0);
--- DBCC CHECKIDENT ('Content', RESEED, 0);
-
