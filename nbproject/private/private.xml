@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/controller/NewServlet.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/modelDAO/UserDAO.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/includes/footer.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/assets/JS/chatbot.js</file>
@@ -16,25 +15,28 @@
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/controller/LoginGoogleServlet.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/constant/Constant.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/controller/LoadContentServlet.java</file>
+            <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/controller/CourseServlet.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/includes/navbar.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/index.html</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/includes/header.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/connectDB/ConnectDB.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/assets/JS/login.js</file>
+            <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/WEB-INF/web.xml</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/model/User.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/model/GoogleAccount.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/login.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/assets/CSS/header.css</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/modelDAO/ContentDAO.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/assets/CSS/navbar.css</file>
+            <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/controller/InformationCourseServlet.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/controller/DivideActionServlet.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/InformationCourse.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/includes/javascriptInfo.jsp</file>
+            <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/learningpage.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/src/java/constant/IConstant.java</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/includes/main.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/assets/CSS/footer.css</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/register.jsp</file>
-            <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/landingpage.jsp</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/assets/JS/index.js</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/assets/CSS/chatbot.css</file>
             <file>file:/Users/macbookpro/Documents/Documents%20-%20Macbook’s%20MacBook%20Pro%20-%201/FPTU/Semester%204/PRJ301/PRJ301_LearningApp/web/includes/chatbot.jsp</file>
