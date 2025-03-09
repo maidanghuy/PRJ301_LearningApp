@@ -111,14 +111,14 @@
 
 
                         <div class="course_footer_btn">
-                            <a href="#"
+                            <a href="CourseServlet"
                                ><button class="btn course__register-btn">
-                                    Khóa Học Khác
+                                    Another Course
                                 </button></a
                             >
-                            <a href="#"
+                            <a href="lesson"
                                ><button class="btn course__register-btn">
-                                    Đăng ký ngay
+                                    Enroll
                                 </button></a
                             >
                         </div>
