@@ -15,7 +15,11 @@
     <body>
         <c:if test="${featureMessage == false}">
             <script>
-                alert("Tính năng này chưa có sẵn!");
+                window.onload = function () {
+                    setTimeout(function () {
+                        alert("Tính năng này chưa có sẵn!");
+                    }, 500); // Hiện alert sau 500ms
+                };
             </script>
         </c:if>
         <div class="container-custom">
