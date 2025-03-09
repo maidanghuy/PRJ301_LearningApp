@@ -24,6 +24,10 @@
         <servlet-name>InformationCourseServlet</servlet-name>
         <servlet-class>controller.InformationCourseServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LessonServlet</servlet-name>
+        <servlet-class>controller.LessonServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
@@ -43,5 +47,9 @@
     <servlet-mapping>
         <servlet-name>InformationCourseServlet</servlet-name>
         <url-pattern>/details</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LessonServlet</servlet-name>
+        <url-pattern>/lesson</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -34,6 +34,12 @@
                         <div class="auth__body">
                             <form action="DivideActionServlet" method="post">
                                 <input type="text" id="formName" name="formName" value="login" hidden>
+                                 <%
+                                    String mess = (String) request.getAttribute("mess");
+                                    if (mess != null) {
+                                %>
+                                    <p style="color: red;"><%= mess %></p>
+                                <% } %>
                                 <!-- Form Login -->
                                 <div class="auth__input-group">
                                     <input type="text" id="username" name="username" class="auth__input"
