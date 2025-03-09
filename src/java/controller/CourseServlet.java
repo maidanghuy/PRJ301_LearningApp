@@ -19,7 +19,7 @@ import modelDAO.CourseDao;
  *
  * @author ADMIN
  */
-@WebServlet(name = "CourseServlet", urlPatterns = {"/CourseServlet"})
+@WebServlet(name = "CourseServlet", urlPatterns = {"/CourseServlet", "/course"})
 public class CourseServlet extends HttpServlet {
 
     /**

@@ -2,11 +2,11 @@
 INSERT INTO Users
     (role, username, password, email, dateOfBirth, status)
 VALUES
-    ('Student', 'huymai', 'hashed_password_123', 'huymai@example.com', '2004-05-15', 'Active'),
-    ('Student', 'nguyenvan', 'hashed_password_456', 'nguyenvan@example.com', '2003-07-20', 'Active'),
-    ('Teacher', 'phamthanh', 'hashed_password_789', 'phamthanh@example.com', '1985-11-30', 'Active'),
-    ('Student', 'tranbao', 'hashed_password_321', 'tranbao@example.com', '2005-01-10', 'Active'),
-    ('Teacher', 'lequoc', 'hashed_password_654', 'lequoc@example.com', '1990-09-25', 'Inactive');
+    ('Student', 'maidanghuy', 'password_123', 'maidanghuy@example.com', '2004-05-15', 'Active'),
+    ('Student', 'nguyenlequan', 'password_456', 'nguyenlequan@example.com', '2003-07-20', 'Active'),
+    ('Teacher', 'hoangminhhien', 'password_789', 'hoangminhhien@example.com', '1985-11-30', 'Active'),
+    ('Student', 'trandinhquy', 'password_321', 'trandinhquy@example.com', '2005-01-10', 'Active'),
+    ('Teacher', 'admin', 'password_654', 'admin@example.com', '1990-09-25', 'Inactive');
 
 -- Chèn dữ liệu vào bảng Courses (Khóa học ngoại ngữ)
 INSERT INTO Courses
@@ -312,3 +312,61 @@ SET linkimg =
 		WHEN courseID = 1 THEN './assets/images/course/toeic-smartcom-english_optimized.jpg'
         ELSE linkimg
     END;
+
+
+INSERT INTO Content
+    (contentType, title, filePath, videoPath, audioFile, source, example, describe, createdAt)
+VALUES
+    -- Vocabulary (chỉ có filePath - PDF tài liệu từ vựng)
+    ('Vocabulary', 'Common IELTS Vocabulary', 'files/vocabulary_common.pdf', NULL, NULL, NULL, NULL, 'Tài liệu từ vựng IELTS phổ biến', GETDATE()),
+    ('Vocabulary', 'IELTS Academic Word List', 'files/ielts_word_list.pdf', NULL, NULL, NULL, NULL, 'Danh sách từ vựng học thuật IELTS', GETDATE()),
+
+    -- Grammar (có videoPath - Video YouTube + filePath - PDF tài liệu ngữ pháp)
+    ('Grammar', 'IELTS Grammar Basics', 'files/ielts_grammar_basics.pdf', 'https://www.youtube.com/embed/CfU7rIZPnNY?si=Fy6R3f-7AEkEqArK', NULL, NULL, NULL, 'Video hướng dẫn cơ bản về ngữ pháp IELTS', GETDATE()),
+    ('Grammar', 'Advanced IELTS Grammar', 'files/advanced_ielts_grammar.pdf', 'https://www.youtube.com/embed/BaX7xwa8Vh4?si=YOokbhdmd2wtMkTQ', NULL, NULL, NULL, 'Hướng dẫn ngữ pháp nâng cao trong IELTS', GETDATE()),
+
+    -- Reading (chỉ có filePath - PDF tài liệu đọc hiểu)
+    ('Reading', 'IELTS Reading Strategies', 'files/reading_strategies.pdf', NULL, NULL, NULL, NULL, 'Hướng dẫn chiến lược làm bài đọc IELTS', GETDATE()),
+    ('Reading', 'IELTS Reading Practice Tests', 'files/ielts_reading_tests.pdf', NULL, NULL, NULL, NULL, 'Bộ đề thực hành đọc IELTS', GETDATE()),
+
+    -- Listening (có audioFile - file audio + filePath - transcript)
+    ('Listening', 'IELTS Listening Test 1', 'files/listening_test1_transcript.pdf', NULL, 'audio/listening_test1.mp3', NULL, NULL, 'Bài kiểm tra nghe IELTS với transcript', GETDATE()),
+    ('Listening', 'IELTS Listening Tips', 'files/listening_tips.pdf', NULL, 'audio/listening_tips.mp3', NULL, NULL, 'Mẹo luyện nghe hiệu quả cho IELTS', GETDATE());
+
+
+INSERT INTO Lesson
+    (courseID, lessonTitle, content, duration, createdAt)
+VALUES
+    (1, 'IELTS Vocabulary Essentials', 'Bài học về từ vựng quan trọng trong IELTS', 45, GETDATE()),
+    (1, 'Grammar for IELTS Writing', 'Tổng hợp ngữ pháp quan trọng cho phần Writing', 50, GETDATE()),
+    (1, 'Effective Reading Techniques', 'Phương pháp đọc hiểu hiệu quả trong IELTS', 60, GETDATE()),
+    (1, 'IELTS Listening Strategies', 'Chiến lược làm bài nghe hiệu quả', 40, GETDATE());
+
+
+INSERT INTO Lesson_Content
+    (lessonID, contentID)
+VALUES
+    -- Liên kết bài học từ vựng với nội dung từ vựng
+    (1, 1),
+    (1, 2),
+
+    -- Liên kết bài học ngữ pháp với nội dung ngữ pháp
+    (2, 3),
+    (2, 4),
+
+    -- Liên kết bài học đọc hiểu với nội dung đọc hiểu
+    (3, 5),
+    (3, 6),
+
+    -- Liên kết bài học nghe với nội dung nghe
+    (4, 7),
+    (4, 8);
+
+-- DELETE FROM Lesson_Content;
+-- -- Xóa dữ liệu liên kết trước
+-- DELETE FROM Content;
+-- DELETE FROM Lesson;
+
+-- DBCC CHECKIDENT ('Lesson', RESEED, 0);
+-- DBCC CHECKIDENT ('Content', RESEED, 0);
+
