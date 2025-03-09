@@ -41,6 +41,7 @@ CREATE TABLE Courses
     -- Ngày tạo khóa học
     updatedAt DATETIME DEFAULT GETDATE()
     -- Ngày cập nhật khóa hoc
+    -- Ngày cập nhật khóa hoc
 );
 
 ALTER TABLE Courses 

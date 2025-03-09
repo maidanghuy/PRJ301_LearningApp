@@ -362,11 +362,11 @@ VALUES
     (4, 7),
     (4, 8);
 
-DELETE FROM Lesson_Content;
--- Xóa dữ liệu liên kết trước
-DELETE FROM Content;
-DELETE FROM Lesson;
+-- DELETE FROM Lesson_Content;
+-- -- Xóa dữ liệu liên kết trước
+-- DELETE FROM Content;
+-- DELETE FROM Lesson;
 
-DBCC CHECKIDENT ('Lesson', RESEED, 0);
-DBCC CHECKIDENT ('Content', RESEED, 0);
+-- DBCC CHECKIDENT ('Lesson', RESEED, 0);
+-- DBCC CHECKIDENT ('Content', RESEED, 0);
 
