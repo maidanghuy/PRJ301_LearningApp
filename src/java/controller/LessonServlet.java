@@ -54,13 +54,12 @@ public class LessonServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {
-            // Thông báo lỗi nếu chưa đăng nhập
+            
             String mess = "Please Login!";
             request.setAttribute("mess", mess);
 
-            // Chuyển hướng về trang đăng nhập
             request.getRequestDispatcher("login.jsp").forward(request, response);
-            return; // Dừng xử lý tiếp theo
+            return; 
         }
     } 
 

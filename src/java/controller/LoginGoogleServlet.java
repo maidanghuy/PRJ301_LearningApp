@@ -63,7 +63,7 @@ public class LoginGoogleServlet extends HttpServlet {
         response.addCookie(userCookie);
 
         // Chuyển hướng đến trang chính
-        response.sendRedirect("landingpage.jsp");
+        response.sendRedirect("learningpage.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the
