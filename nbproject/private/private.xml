@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/constant/Constant.java</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/modelDAO/CourseDao.java</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/connectDB/ConnectDB.java</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/course.jsp</file>
@@ -19,7 +20,6 @@
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/modelDAO/ContentDAO.java</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/learningpage.jsp</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/CourseServlet.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/Testing.jsp</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/LoginGoogleServlet.java</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/LoadContentServlet.java</file>
             <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/InformationCourseServlet.java</file>
