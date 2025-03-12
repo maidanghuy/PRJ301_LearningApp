@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <filter>
+        <filter-name>URLRewriteFilter</filter-name>
+        <filter-class>filter.URLRewriteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>URLRewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginGoogleServlet</servlet-class>
@@ -42,14 +50,14 @@
     </servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>LoadContentServlet2</servlet-name>
-        <url-pattern>/LoadContent</url-pattern>
+        <url-pattern>/LoadContentServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>InformationCourseServlet</servlet-name>
-        <url-pattern>/details</url-pattern>
+        <url-pattern>/InformationCourseServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LessonServlet</servlet-name>
-        <url-pattern>/lesson</url-pattern>
+        <url-pattern>/LessonServlet</url-pattern>
     </servlet-mapping>
 </web-app>

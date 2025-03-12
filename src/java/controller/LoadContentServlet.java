@@ -63,7 +63,7 @@ public class LoadContentServlet extends HttpServlet {
         ContentDAO dao = new ContentDAO();
         List<Content> listContent = dao.getAllContent();
         request.setAttribute("listContent", listContent);
-        request.getRequestDispatcher("learn.jsp").forward(request, response);
+        request.getRequestDispatcher("view/learn.jsp").forward(request, response);
 //          HttpSession session = request.getSession();
 //          session.setAttribute("listContent", listContent);
           

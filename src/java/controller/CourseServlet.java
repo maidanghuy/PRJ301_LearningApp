@@ -56,7 +56,7 @@ public class CourseServlet extends HttpServlet {
         CourseDao dao= new CourseDao();
         List<Course> listCourse = dao.getAll();
         request.setAttribute("list", listCourse);
-        request.getRequestDispatcher("course.jsp").forward(request, response);
+        request.getRequestDispatcher("view/course.jsp").forward(request, response);
     }
 
     
