@@ -5,7 +5,6 @@
 package controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -21,7 +20,7 @@ import modelDAO.UserDAO;
  *
  * @author macbookpro
  */
-@WebServlet(urlPatterns = {"/login"})
+@WebServlet(urlPatterns = {"/logingg"})
 public class LoginGoogleServlet extends HttpServlet {
 
     /**
@@ -35,17 +34,30 @@ public class LoginGoogleServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+//        response.setContentType("text/html;charset=UTF-8");
+//        try (PrintWriter out = response.getWriter()) {
+//            /* TODO output your page here. You may use following sample code. */
+//            out.println("<!DOCTYPE html>");
+//            out.println("<html>");
+//            out.println("<head>");
+//            out.println("<title>Servlet CourseServlet</title>");
+//            out.println("</head>");
+//            out.println("<body>");
+//            out.println("<h1>Servlet CourseServlet at " + request.getContextPath() + "</h1>");
+//            out.println("</body>");
+//            out.println("</html>");
+//        }
         String code = request.getParameter("code");
         GoogleLogin gg = new GoogleLogin();
-
+//      
+        System.out.println(code);
         String accessToken = gg.getToken(code);
-        // System.out.println(accessToken);
+        System.out.println(accessToken);
 
         GoogleAccount acc = gg.getUserInfo(accessToken);
         System.out.println(acc);
         User user = new User(acc);
-//        System.out.println(user);
+        System.out.println(user);
 
         UserDAO udao = new UserDAO();
         if (!udao.isUsernameExists(acc.getEmail())) {
@@ -63,7 +75,8 @@ public class LoginGoogleServlet extends HttpServlet {
         response.addCookie(userCookie);
 
         // Chuyển hướng đến trang chính
-        response.sendRedirect("learningpage.jsp");
+        response.sendRedirect("view/learningpage.jsp");
+//        request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the

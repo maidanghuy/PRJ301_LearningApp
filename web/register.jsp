@@ -6,14 +6,15 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ include file="./view/includes/common.jsp" %>
 <!DOCTYPE html>
 <html>
 
     <head>
         <title>Register Page</title>
-        <%@ include file="./includes/headInfo.jsp" %>
+        <%@ include file="./view/includes/headInfo.jsp" %>
         <!-- styles.css: Chứa các quy tắc CSS chính của trang -->
-        <link rel="stylesheet" href="./assets/CSS/login.css" />
+        <link rel="stylesheet" href="${css}/login.css" />
         <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     </head>
 
@@ -22,7 +23,7 @@
             <div class="auth">
                 <div class="auth__header">
                     <div class="auth__header-img">
-                        <img src="./assets/images/Rectangle239.svg" alt="Logo">
+                        <img src="${img}/Rectangle239.svg" alt="Logo">
                     </div>
                     <div class="auth__header-content">
                         <h1 class="auth__header-title">Good <span class="auth__header-title--highlight">Morning</span>!</h1>
@@ -70,11 +71,11 @@
                 </div>
                 <div class="dividerTB"></div>
                 <div class="auth__footer">
-                    <p class="auth__footer-text">Bạn đã có tài khoản?  <a href="login.jsp" class="auth__footer-link">Đăng Nhập</a></div>               
+                    <p class="auth__footer-text">Bạn đã có tài khoản?  <a href="${url}/login" class="auth__footer-link">Đăng Nhập</a></div>               
             </div>
         </div>
 
-        <script src="./assets/JS/login.js"></script>
+        <script src="${js}/login.js"></script>
     </body>
 
 </html>

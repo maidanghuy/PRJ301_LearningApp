@@ -2,25 +2,28 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="includes/common.jsp" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
-        <title>Trang chu</title>
-        <%@ include file="./includes/headInfo.jsp" %>
-        <!-- styles.css: Chứa các quy tắc CSS chính của trang -->
-        <link rel="stylesheet" href="./assets/CSS/learn.css" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Learning - G-easy Learning</title>
+        <base href="${url}/">
+        <link rel="stylesheet" href="${css}/learn.css">
+        <%@ include file="includes/headInfo.jsp" %>
         <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
         <div class="container-custom">
             <div class="container-left">
-                <%@ include file="./includes/navbar.jsp" %>
+                <%@ include file="includes/navbar.jsp" %>
             </div>
             <div class="container-right">
                 <div class="main-content">
-                    <%@ include file="./includes/header.jsp" %>
+                    <%@ include file="includes/header.jsp" %>
                     <!-- <%@ include file="./includes/main.jsp" %> -->
 
                     <!-- ---------------------------------------------------------------------- -->
@@ -52,10 +55,12 @@
                                      data-id="lesson-${count.index + 1}">
 
                                     <!-- Hiển thị video nếu contentType là Grammar -->
-                                    <c:if test="${not empty c.contentType and c.contentType eq 'Grammar' and not empty c.videoPath}">
-                                        <iframe src="${c.videoPath}" title="YouTube video player" frameborder="0"
+                                    <c:if
+                                        test="${not empty c.contentType and c.contentType eq 'Grammar' and not empty c.videoPath}">
+                                        <iframe src="${c.videoPath}" title="YouTube video player"
+                                                frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                referrerpolicy="strict-origin-when-cross-origin" 
+                                                referrerpolicy="strict-origin-when-cross-origin"
                                                 style="aspect-ratio: 16 / 9; width: 100%; max-width: 800px;"
                                                 allowfullscreen></iframe>
                                         </c:if>
@@ -63,17 +68,18 @@
                                     <h2 class="lesson-detail__title">${c.title}</h2>
                                     <p class="lesson-detail__description">${c.describe}</p>
 
-                                     <!-- Hiển thị filePath nếu contentType là Vocabulary, Grammar hoặc Reading -->
-                                     <c:if test="${not empty c.contentType and not empty c.filePath 
-                                        and (c.contentType eq 'Vocabulary' or c.contentType eq 'Grammar' or c.contentType eq 'Reading')}">
-                                <div class="lesson-file">
-                                    <!-- <button><a href="${c.filePath}" target="_blank">Down LOad</a></button> -->
-                                    <a href="${c.filePath}" class="download-btn">
-                                      <i class="fas fa-download"></i>
-                                      Download tài liệu
-                                  </a>
-                                </div>
-                          </c:if>
+                                    <!-- Hiển thị filePath nếu contentType là Vocabulary, Grammar hoặc Reading -->
+                                    <c:if
+                                        test="${not empty c.contentType and not empty c.filePath 
+                                                and (c.contentType eq 'Vocabulary' or c.contentType eq 'Grammar' or c.contentType eq 'Reading')}">
+                                        <div class="lesson-file">
+                                            <!-- <button><a href="${c.filePath}" target="_blank">Down LOad</a></button> -->
+                                            <a href="${c.filePath}" class="download-btn">
+                                                <i class="fas fa-download"></i>
+                                                Download tài liệu
+                                            </a>
+                                        </div>
+                                    </c:if>
                                 </div>
                             </c:forEach>
                         </main>
@@ -82,13 +88,14 @@
 
                 </div>
                 <footer>
-                    <%@ include file="./includes/footer.jsp" %>
+                    <%@ include file="includes/footer.jsp" %>
                 </footer>
             </div>
         </div>
+        <%@ include file="./includes/chatbot.jsp" %>      
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="./assets/JS/index.js"></script>
-        <script src="assets/JS/learn.js"></script>
+        <%@ include file="./includes/javascriptInfo.jsp" %> 
+        <script src="${js}/learn.js"></script>
     </body>
 
 </html>
