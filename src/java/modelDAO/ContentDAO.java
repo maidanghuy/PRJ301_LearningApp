@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package modelDAO;
+
 import java.sql.Connection;
 import connectDB.ConnectDB;
 import java.sql.Date;
@@ -17,6 +18,7 @@ import model.Content;
  * @author LENOVO
  */
 public class ContentDAO {
+
     Connection conn;
 
     public ContentDAO() {
@@ -29,39 +31,39 @@ public class ContentDAO {
         }
     }
 
-    public List<Content> getAllContent() {
+    public List<Content> getAllContentByLessonID(int id) {
+        String sql = "select c.contentID, c.contentType, c.title, c.filePath, c.videoPath, c.audioFile, c.source, c.example, c.describe, c.createdAt \n"
+                + "from Content c inner join Lesson_Content lc on c.contentID = lc.contentID\n"
+                + "inner join Lesson l on lc.lessonID = l.lessonID\n"
+                + "where l.lessonID = ?";
         List<Content> contentList = new ArrayList<>();
-        String query = "SELECT * FROM Content";
-
-        try (
-             PreparedStatement pre = conn.prepareStatement(query);
-             ResultSet rs = pre.executeQuery()) {
-
-            while (rs.next()) {
-                Content content = new Content(
-                        rs.getInt(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(10),
-                        rs.getDate(9)
-                );
-                contentList.add(content);
+        try {
+            //Tạo khay chứa câu lệnh
+            PreparedStatement pre = conn.prepareStatement(sql);
+            pre.setInt(1, id);
+            //Chạy câu lệnh và tạo khay chứa kết quả câu lệnh
+            ResultSet resultSet = pre.executeQuery();
+            while (resultSet.next()) {
+                String contentType = resultSet.getString(2);
+                String title = resultSet.getString(3);
+                String filePath = resultSet.getString(4);
+                String videoPath = resultSet.getString(5);
+                String audioFile = resultSet.getString(6);
+                String source = resultSet.getString(7);
+                String example= resultSet.getString(8);
+                String describe= resultSet.getString(9);
+                Date createdAt= resultSet.getDate(10);
+                contentList.add(new Content(id, contentType, title, filePath, videoPath, audioFile, source, example, describe, createdAt));
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("error: " + e);
         }
         return contentList;
     }
-    
+
     public static void main(String[] args) {
         ContentDAO dao = new ContentDAO();
-        List<Content> a = dao.getAllContent();
+        List<Content> a = dao.getAllContentByLessonID(1);
         System.out.println(a);
     }
 }
-
