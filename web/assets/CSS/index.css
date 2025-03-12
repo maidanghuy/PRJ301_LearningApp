@@ -60,6 +60,58 @@
   right: 0.8rem;
 }
 
+.wrapper__banner {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  /* Đặt chiều cao cố định cho banner */
+}
+
+.banner__slides {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.banner__slides.active {
+  opacity: 1;
+  position: relative;
+}
+
+.banner__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nút điều hướng */
+.banner__control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.banner__control--prev {
+  left: 10px;
+}
+
+.banner__control--next {
+  right: 10px;
+}
+
+
 /* About */
 .wrapper__about {
   display: flex;

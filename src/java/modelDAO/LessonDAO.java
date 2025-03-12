@@ -5,6 +5,11 @@
 package modelDAO;
 import connectDB.ConnectDB;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.sql.SQLException;
+import model.Lesson;
 
 /**
  *
@@ -21,4 +26,39 @@ public class LessonDAO {
             System.out.println(e);
         }
     }
+    
+    public ArrayList<Lesson> getAllLessonsOfCourse(int courseID) {
+        ArrayList<Lesson> lessons = new ArrayList<>();
+        String query = "SELECT lessonID, courseID, lessonTitle, content, duration, createdAt FROM Lesson WHERE courseID = ? ORDER BY createdAt DESC";
+
+        try {
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setInt(1, courseID);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Lesson lesson = new Lesson();
+                lesson.setLessonID(rs.getInt("lessonID"));
+                lesson.setCourseID(rs.getInt("courseID"));
+                lesson.setLessonTitle(rs.getString("lessonTitle"));
+                lesson.setContent(rs.getString("content"));
+                lesson.setDuration(rs.getInt("duration"));
+                lesson.setCreatedAt(rs.getDate("createdAt"));
+
+                lessons.add(lesson);
+            }
+            rs.close();
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return lessons;
+    }
+    
+    public static void main(String[] args) {
+        LessonDAO ldao = new LessonDAO();
+        System.out.println(ldao.getAllLessonsOfCourse(1));
+    }
+
 }

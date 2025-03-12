@@ -10,6 +10,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import model.Course;
 import modelDAO.CourseDao;
 import java.util.HashMap;
@@ -60,6 +61,8 @@ public class InformationCourseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
+        HttpSession session = request.getSession();
+        session.setAttribute("courseID", id);
         CourseDao dao = new CourseDao();
         Course course = dao.getByCourseID(id);
 
@@ -79,7 +82,7 @@ public class InformationCourseServlet extends HttpServlet {
 
         request.setAttribute("course", course);
         request.setAttribute("learningPathway", learningPathwayMap);
-        request.getRequestDispatcher("InformationCourse.jsp").forward(request, response);
+        request.getRequestDispatcher("view/InformationCourse.jsp").forward(request, response);
     }
 
     /**
