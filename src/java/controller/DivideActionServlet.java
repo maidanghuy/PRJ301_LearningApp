@@ -88,8 +88,8 @@ public class DivideActionServlet extends HttpServlet {
                 break;
             }
             case "viewLesson" -> {
-                int courseId = Integer.parseInt(request.getParameter("id"));
-                request.getRequestDispatcher("/LoadContentServlet?id=" + courseId).forward(request, response);
+                int lessonId = Integer.parseInt(request.getParameter("id"));
+                request.getRequestDispatcher("/LoadContentServlet?id=" + lessonId).forward(request, response);
                 break;
             }
             case "lesson" -> {
