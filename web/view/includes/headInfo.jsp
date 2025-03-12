@@ -1,7 +1,6 @@
 <%-- Document : headInfo Created on : Mar 3, 2025, 12:40:29 AM Author : macbookpro --%>
 
 <%@page contentType="text/html" import="model.*,java.util.*, modelDAO.*, controller.*" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,10 +24,10 @@
 <script src="https://kit.fontawesome.com/9c4f371355.js" crossorigin="anonymous"></script>
 <!-- Import CSS nội bộ -->
 <!-- reset.css: Xóa các style mặc định của trình duyệt để dễ tùy chỉnh -->
-<link rel="stylesheet" href="./assets/CSS/reset.css" />
+<link rel="stylesheet" href="${css}/reset.css" />
 <!-- global.css: Chứa các quy tắc CSS chung cho trang -->
-<link rel="stylesheet" href="./assets/CSS/global.css" />
+<link rel="stylesheet" href="${css}/global.css" />
 <!-- global.css: Chứa các biến CSS chung cho trang -->
-<link rel="stylesheet" href="./assets/CSS/root.css" />
+<link rel="stylesheet" href="${css}/root.css" />
 <!-- chatbot.css: Chứa các biến CSS chatbot -->
-<link rel="stylesheet" href="./assets/CSS/chatbot.css" />
+<link rel="stylesheet" href="${css}/chatbot.css" />

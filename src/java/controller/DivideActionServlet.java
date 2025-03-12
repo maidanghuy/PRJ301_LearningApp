@@ -7,7 +7,6 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.sql.Date;
 import java.time.LocalDate;
+import model.Course;
 import model.User;
 import modelDAO.UserDAO;
 
@@ -22,7 +22,6 @@ import modelDAO.UserDAO;
  *
  * @author macbookpro
  */
-@WebServlet(urlPatterns = {"/view/*"})
 public class DivideActionServlet extends HttpServlet {
 
     public DivideActionServlet() {
@@ -71,31 +70,64 @@ public class DivideActionServlet extends HttpServlet {
 
         switch (action) {
             case "home" -> {
-                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
+                request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
+                break;
             }
             case "material" -> {
                 request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
-                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
+                request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
+                break;
             }
             case "course" -> {
-                request.getRequestDispatcher("course").forward(request, response);
+                request.getRequestDispatcher("/CourseServlet").forward(request, response);
+                break;
+            }
+            case "viewCourse" -> {
+                int courseId = Integer.parseInt(request.getParameter("id"));
+                request.getRequestDispatcher("/InformationCourseServlet?id=" + courseId).forward(request, response);
+                break;
+            }
+            case "viewLesson" -> {
+                int courseId = Integer.parseInt(request.getParameter("id"));
+                request.getRequestDispatcher("/LoadContentServlet?id=" + courseId).forward(request, response);
+                break;
+            }
+            case "lesson" -> {
+                HttpSession session = request.getSession();
+                int courseID = (Integer) session.getAttribute("courseID");
+                Course c = (Course) session.getAttribute("course");
+                System.out.println(c);
+                request.getRequestDispatcher("/LessonServlet?id=" + courseID).forward(request, response);
+                break;
             }
             case "test" -> {
                 request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
-                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
+                request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
+                break;
             }
             case "account" -> {
                 request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
-                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
+                request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
+                break;
             }
             case "logout" -> {
                 if (request.getSession(false) != null) {
                     request.getSession().invalidate();
-                    request.getRequestDispatcher("learningpage.jsp").forward(request, response);
+                    response.sendRedirect("view");
                 }
+                break;
+            }
+            case "login" -> {
+                request.getRequestDispatcher("login.jsp").forward(request, response);
+                break;
+            }
+            case "register" -> {
+                request.getRequestDispatcher("register.jsp").forward(request, response);
+                break;
             }
             default -> {
-                request.getRequestDispatcher("learningpage.jsp").forward(request, response);
+                request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
+                break;
             }
         }
     }
@@ -153,7 +185,7 @@ public class DivideActionServlet extends HttpServlet {
             response.addCookie(userCookie);
 
             // Chuyển hướng đến trang chính
-            response.sendRedirect("learningpage.jsp");
+            response.sendRedirect("view/home");
         } else {
             // Đăng nhập thất bại, chuyển hướng về trang login với thông báo lỗi
             request.setAttribute("error", "Sai tài khoản hoặc mật khẩu!");
@@ -234,7 +266,7 @@ public class DivideActionServlet extends HttpServlet {
 
             if (isRegistered) {
                 request.setAttribute("message", "Đăng ký thành công! Vui lòng đăng nhập.");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
+                response.sendRedirect("login");
             } else {
                 request.setAttribute("error", "Đăng ký thất bại! Vui lòng thử lại.");
                 request.setAttribute("username", username);

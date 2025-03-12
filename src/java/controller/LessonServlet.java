@@ -11,6 +11,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
+import model.Lesson;
+import modelDAO.LessonDAO;
 
 /**
  *
@@ -56,11 +60,20 @@ public class LessonServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") == null) {
             
             String mess = "Please Login!";
-            request.setAttribute("mess", mess);
+            request.setAttribute("error", mess);
 
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+//            request.getRequestDispatcher("login").forward(request, response);
+response.sendRedirect(request.getContextPath() + "/login");
             return; 
         }
+        ArrayList<Lesson> lessons = new ArrayList<>();
+        LessonDAO ldao = new LessonDAO();
+        
+        int courseID = Integer.parseInt(request.getParameter("id"));
+        lessons = ldao.getAllLessonsOfCourse(courseID);
+        request.setAttribute("lessons", lessons);
+        request.getRequestDispatcher("view/lesson.jsp").forward(request, response);
+//        processRequest(request, response);
     } 
 
     /** 
