@@ -2,21 +2,22 @@
 INSERT INTO Users
     (role, username, password, email, dateOfBirth, status)
 VALUES
-    ('Student', 'maidanghuy', 'password_123', 'maidanghuy@example.com', '2004-05-15', 'Active'),
-    ('Student', 'nguyenlequan', 'password_456', 'nguyenlequan@example.com', '2003-07-20', 'Active'),
-    ('Teacher', 'hoangminhhien', 'password_789', 'hoangminhhien@example.com', '1985-11-30', 'Active'),
-    ('Student', 'trandinhquy', 'password_321', 'trandinhquy@example.com', '2005-01-10', 'Active'),
-    ('Teacher', 'admin', 'password_654', 'admin@example.com', '1990-09-25', 'Inactive');
+    ('Student', 'maidanghuy', '123123', 'maidanghuy@example.com', '2004-05-15', 'Active'),
+    ('Student', 'nguyenlequan', '123123', 'nguyenlequan@example.com', '2003-07-20', 'Active'),
+    ('Teacher', 'hoangminhhien', '123123', 'hoangminhhien@example.com', '1985-11-30', 'Active'),
+    ('Student', 'trandinhquy', '123123', 'trandinhquy@example.com', '2005-01-10', 'Active'),
+    ('Teacher', 'admin', '123123', 'admin@example.com', '1990-09-25', 'Inactive');
 
 -- Chèn dữ liệu vào bảng Courses (Khóa học ngoại ngữ)
+-- Insert data into the Courses table
 INSERT INTO Courses
     (courseName, description, level)
 VALUES
-    ('Tiếng Anh Cơ Bản', 'Khóa học dành cho người mới bắt đầu học tiếng Anh, bao gồm phát âm, từ vựng và ngữ pháp cơ bản.', 'Beginner'),
-    ('Tiếng Anh Giao Tiếp', 'Giúp học viên cải thiện khả năng giao tiếp hàng ngày bằng tiếng Anh.', 'Intermediate'),
-    ('Luyện Thi IELTS', 'Khóa học cung cấp chiến lược và bài tập thực hành cho kỳ thi IELTS.', 'Advanced'),
-    ('Tiếng Nhật N5', 'Khóa học giúp học viên làm quen với bảng chữ cái Hiragana, Katakana và ngữ pháp cơ bản.', 'Beginner'),
-    ('Tiếng Nhật N4', 'Mở rộng vốn từ vựng, ngữ pháp và luyện tập kỹ năng đọc hiểu tiếng Nhật ở trình độ N4.', 'Intermediate');
+    ('Basic English', 'A course designed for beginners to learn English, including pronunciation, vocabulary, and basic grammar.', 'Beginner'),
+    ('English Communication', 'Helps learners improve their daily communication skills in English.', 'Intermediate'),
+    ('IELTS Preparation', 'Provides strategies and practice exercises for the IELTS exam.', 'Advanced'),
+    ('Japanese N5', 'Introduces learners to the Hiragana, Katakana alphabets and basic grammar.', 'Beginner'),
+    ('Japanese N4', 'Expands vocabulary, grammar, and reading comprehension skills for the N4 level.', 'Intermediate');
 
 UPDATE Courses
 SET 
@@ -30,33 +31,11 @@ SET
     The tuition fee for this course is 6,500,000 VND / 3.5 months, including full access to study materials, mock tests, and detailed corrections;
     This course is especially suitable for students who want to reach their target TOEIC score in the shortest time possible.',
 
-    learningPathway = '{
-        "Vocabulary": {
-            "topics": "Advanced business contexts, financial reports, corporate communication",
-            "phrases": "High-frequency TOEIC idioms, formal expressions",
-            "memorization": "Utilize context-based memorization techniques",
-            "expansion": "Learn specialized vocabulary for different TOEIC topics"
-        },
-        "Grammar": {
-            "sentence_structure": "Mastery of complex sentence structures in formal writing",
-            "tenses": "Perfect tense usage in TOEIC, modal verbs for formal contexts",
-            "important_components": "Grammar rules for error correction and sentence restructuring"
-        },
-        "Reading": {
-            "familiarization": "Deep understanding of all TOEIC Reading question types",
-            "skimming_scanning": "Speed reading techniques for quick information extraction",
-            "common_mistakes": "Avoid common traps in inference and paraphrased questions"
-        },
-        "Listening": {
-            "business_scenarios": "Handle complex business meetings, negotiations, and briefings",
-            "longer_discussions": "Develop strategies for following extended conversations and announcements",
-            "test_familiarization": "Perfect your approach to answering TOEIC listening questions under time pressure"
-        },
-        "Practice_Tests": {
-            "TOEIC_tests": "Full-length simulated TOEIC exams with score tracking",
-            "detailed_explanations": "Step-by-step breakdown of correct and incorrect answers"
-        }
-    }'
+    learningPathway = '"Vocabulary: Advanced business contexts, financial reports, corporate communication / High-frequency TOEIC idioms, formal expressions / Utilize context-based memorization techniques / Learn specialized vocabulary for different TOEIC topics",
+"Grammar: Mastery of complex sentence structures in formal writing / Perfect tense usage in TOEIC, modal verbs for formal contexts / Grammar rules for error correction and sentence restructuring",
+"Reading: Deep understanding of all TOEIC Reading question types / Speed reading techniques for quick information extraction / Avoid common traps in inference and paraphrased questions",
+"Listening: Handle complex business meetings, negotiations, and briefings / Develop strategies for following extended conversations and announcements / Perfect your approach to answering TOEIC listening questions under time pressure",
+"Practice_Tests: Full-length simulated TOEIC exams with score tracking / Step-by-step breakdown of correct and incorrect answers"'
 WHERE  [courseID]= 3;
 
 UPDATE Courses
@@ -71,33 +50,13 @@ SET
     The tuition fee for this course is 4,000,000 VND / 3 months, including study materials and personalized feedback from experienced instructors;
     This course is especially suitable for students who want to pursue higher levels of Japanese proficiency, such as N4 and beyond.',
 
-    learningPathway = '{
-        "Vocabulary": {
-            "topics": "Daily life, greetings, numbers, time expressions",
-            "phrases": "Common Japanese expressions and polite phrases",
-            "memorization": "Use Flashcards and mnemonics to learn vocabulary",
-            "expansion": "Gradually build a strong vocabulary base for N5"
-        },
-        "Grammar": {
-            "sentence_structure": "Basic Japanese sentence patterns",
-            "particles": "Key Japanese particles and their functions",
-            "tenses": "Present, past, and negative forms in Japanese"
-        },
-        "Reading": {
-            "hiragana_katakana": "Master reading and writing in Hiragana and Katakana",
-            "simple_texts": "Read short passages, signs, and basic instructions",
-            "kanji": "Learn essential kanji characters for N5"
-        },
-        "Listening": {
-            "basic_listening": "Understand simple spoken Japanese in daily conversations",
-            "real_conversations": "Practice listening to native speakers in common scenarios",
-            "test_familiarization": "Get familiar with JLPT N5 listening question types"
-        },
-        "Practice_Tests": {
-            "JLPT_tests": "Simulated JLPT N5 practice tests",
-            "detailed_explanations": "Step-by-step analysis of answers and grammar explanations"
-        }
-    }'
+    learningPathway = '
+    "Vocabulary: Daily life, greetings, numbers, time expressions / Common Japanese expressions and polite phrases / Use Flashcards and mnemonics to learn vocabulary / Gradually build a strong vocabulary base for N5",
+    "Grammar: Basic Japanese sentence patterns / Key Japanese particles and their functions / Present, past, and negative forms in Japanese",
+    "Reading: Master reading and writing in Hiragana and Katakana / Read short passages, signs, and basic instructions / Learn essential kanji characters for N5",
+    "Listening: Understand simple spoken Japanese in daily conversations / Practice listening to native speakers in common scenarios / Get familiar with JLPT N5 listening question types",
+    "Practice_Tests: Simulated JLPT N5 practice tests / Step-by-step analysis of answers and grammar explanations"'
+
 WHERE [courseID] = 4;
 
 UPDATE Courses
@@ -111,33 +70,13 @@ SET
     The TOEIC Intermediate Course will help students transition to TOEIC Advanced levels with better test-taking strategies. The tuition fee for this course is 5,000,000 VND / 3 months, including study materials and detailed feedback from experienced instructors;
     This course is especially suitable for students aiming for a TOEIC score of 550-750 and seeking to improve their professional English skills.',
     
-    learningPathway = '{
-        "Vocabulary": {
-            "topics": "Business emails, reports, workplace interactions",
-            "phrases": "Advanced TOEIC phrases, idiomatic expressions",
-            "memorization": "Use mnemonics and context-based learning",
-            "expansion": "Learn vocabulary through TOEIC-style reading passages"
-        },
-        "Grammar": {
-            "sentence_structure": "Complex sentence structures in business contexts",
-            "tenses": "Advanced use of tenses in TOEIC",
-            "important_components": "Grammar for error identification and sentence completion"
-        },
-        "Reading": {
-            "familiarization": "Recognize different question types in TOEIC Reading",
-            "skimming_scanning": "Master advanced skimming and scanning skills",
-            "common_mistakes": "Avoid common pitfalls in double passages and inference questions"
-        },
-        "Listening": {
-            "business_scenarios": "Understand conversations in office, meetings, and negotiations",
-            "longer_discussions": "Analyze Part 3 & Part 4 dialogues effectively",
-            "test_familiarization": "Develop techniques for predicting answers"
-        },
-        "Practice_Tests": {
-            "TOEIC_tests": "Official TOEIC practice test series for intermediate learners",
-            "detailed_explanations": "In-depth answer analysis and test-taking tips"
-        }
-    }'
+    learningPathway = '
+    "Vocabulary: Business emails, reports, workplace interactions / Advanced TOEIC phrases, idiomatic expressions / Use mnemonics and context-based learning / Learn vocabulary through TOEIC-style reading passages",
+    "Grammar: Complex sentence structures in business contexts / Advanced use of tenses in TOEIC / Grammar for error identification and sentence completion",
+    "Reading: Recognize different question types in TOEIC Reading / Master advanced skimming and scanning skills / Avoid common pitfalls in double passages and inference questions",
+    "Listening: Understand conversations in office, meetings, and negotiations / Analyze Part 3 & Part 4 dialogues effectively / Develop techniques for predicting answers",
+    "Practice_Tests: Official TOEIC practice test series for intermediate learners / In-depth answer analysis and test-taking tips"
+'
 WHERE [courseID] = 2;
 
 UPDATE Courses
@@ -150,33 +89,14 @@ SET
     This course helps students build a strong foundation in grammar, vocabulary, pronunciation, and basic communication skills, enabling them to express ideas clearly and confidently in English;
     The IELTS Beginner Course will help students confidently transition to IELTS Intermediate and more advanced courses. The tuition fee for this course is 4,500,000 VND / 2.5 months, including study materials and detailed Writing feedback from experienced instructors;
     This course is especially suitable for students who want to start from scratch and build a solid IELTS foundation, making it easier to develop their skills in more advanced courses',
-    learningPathway = '{
-        "Vocabulary": {
-            "topics": "Daily topics",
-            "phrases": "Phrasal verbs, noun phrases",
-            "memorization": "Memorize vocabulary using Flashcards",
-            "expansion": "Expand vocabulary"
-        },
-        "Grammar": {
-            "basic_sentence_structure": "Basic sentence structures",
-            "tenses": "Fundamental English tenses",
-            "important_components": "Important grammatical components"
-        },
-        "Reading": {
-            "familiarization": "Get familiar with different question types",
-            "skimming_scanning": "Skimming and detailed reading skills",
-            "common_mistakes": "Identify common mistakes and how to fix them"
-        },
-        "Listening": {
-            "basic_listening": "Listen to simple words and sentences",
-            "real_conversations": "Listen to real-life conversations",
-            "test_familiarization": "Get familiar with basic question types"
-        },
-        "Practice_Tests": {
-            "Cambridge_tests": "Cambridge IELTS Test Series 9-16",
-            "detailed_explanations": "Detailed answers and explanations"
-        }
-    }'
+    learningPathway = '
+    "Vocabulary: Daily topics / Phrasal verbs, noun phrases / Memorize vocabulary using Flashcards / Expand vocabulary",
+    "Grammar: Basic sentence structures / Fundamental English tenses / Important grammatical components",
+    "Reading: Get familiar with different question types / Skimming and detailed reading skills / Identify common mistakes and how to fix them",
+    "Listening: Listen to simple words and sentences / Listen to real-life conversations / Get familiar with basic question types",
+    "Practice_Tests: Cambridge IELTS Test Series 9-16 / Detailed answers and explanations"
+'
+
 WHERE [courseID]= 1;
 
 UPDATE Courses
@@ -191,33 +111,13 @@ SET
     The tuition fee for this course is 4,500,000 VND / 3.5 months, including study materials and personalized feedback from experienced instructors;
     This course is especially suitable for students who want to advance their Japanese skills and aim for N3 and beyond.',
 
-    learningPathway = '{
-        "Vocabulary": {
-            "topics": "Workplace, travel, social interactions, daily routines",
-            "phrases": "Frequently used N4 expressions and idiomatic phrases",
-            "memorization": "Use sentence-based learning for vocabulary retention",
-            "expansion": "Increase vocabulary range through JLPT-style texts"
-        },
-        "Grammar": {
-            "sentence_structure": "Intermediate Japanese sentence patterns",
-            "particles": "Advanced usage of Japanese particles",
-            "tenses": "Complex verb conjugations, including causative and passive forms"
-        },
-        "Reading": {
-            "short_articles": "Read and understand short news articles and essays",
-            "dialogues": "Interpret longer and more complex dialogues",
-            "kanji": "Learn additional kanji characters required for JLPT N4"
-        },
-        "Listening": {
-            "daily_conversations": "Understand conversations in more natural speech",
-            "real-world_scenarios": "Comprehend spoken Japanese in various contexts, such as shopping and work",
-            "test_familiarization": "Practice JLPT N4 listening comprehension with simulated tests"
-        },
-        "Practice_Tests": {
-            "JLPT_tests": "Full-length simulated JLPT N4 exams",
-            "detailed_explanations": "Comprehensive explanations for answers and grammar points"
-        }
-    }'
+    learningPathway = '
+    "Vocabulary: Workplace, travel, social interactions, daily routines /Frequently used N4 expressions and idiomatic phrases /Use sentence-based learning for vocabulary retention /Increase vocabulary range through JLPT-style texts",
+    "Grammar: Intermediate Japanese sentence patterns, advanced usage of Japanese particles, complex verb conjugations (causative and passive forms) /Advanced usage of Japanese particles/Complex verb conjugations, including causative and passive forms",
+    "Reading: Read and understand short news articles and essays/ Interpret longer and more complex dialogues/ learn additional kanji characters required for JLPT N4",
+    "Listening: Understand conversations in more natural speech/ comprehend spoken Japanese in various contexts (shopping, work)/ practice JLPT N4 listening comprehension with simulated tests",
+    "Practice_Tests: Full-length simulated JLPT N4 exams/comprehensive explanations for answers and grammar points"'
+
 WHERE [courseID] = 5;
 
 
@@ -337,36 +237,26 @@ VALUES
 INSERT INTO Lesson
     (courseID, lessonTitle, content, duration, createdAt)
 VALUES
-    (1, 'IELTS Vocabulary Essentials', 'Bài học về từ vựng quan trọng trong IELTS', 45, GETDATE()),
-    (1, 'Grammar for IELTS Writing', 'Tổng hợp ngữ pháp quan trọng cho phần Writing', 50, GETDATE()),
-    (1, 'Effective Reading Techniques', 'Phương pháp đọc hiểu hiệu quả trong IELTS', 60, GETDATE()),
-    (1, 'IELTS Listening Strategies', 'Chiến lược làm bài nghe hiệu quả', 40, GETDATE());
-
+    (1, 'IELTS Vocabulary Essentials', 'Lesson on essential vocabulary for IELTS', 45, GETDATE()),
+    (1, 'Grammar for IELTS Writing', 'Compilation of essential grammar for the Writing section', 50, GETDATE()),
+    (1, 'Effective Reading Techniques', 'Techniques for effective reading comprehension in IELTS', 60, GETDATE()),
+    (1, 'IELTS Listening Strategies', 'Effective strategies for IELTS listening', 40, GETDATE());
 
 INSERT INTO Lesson_Content
     (lessonID, contentID)
 VALUES
-    -- Liên kết bài học từ vựng với nội dung từ vựng
+    -- Link vocabulary lesson with vocabulary content
     (1, 1),
     (1, 2),
 
-    -- Liên kết bài học ngữ pháp với nội dung ngữ pháp
+    -- Link grammar lesson with grammar content
     (2, 3),
     (2, 4),
 
-    -- Liên kết bài học đọc hiểu với nội dung đọc hiểu
+    -- Link reading comprehension lesson with reading content
     (3, 5),
     (3, 6),
 
-    -- Liên kết bài học nghe với nội dung nghe
+    -- Link listening lesson with listening content
     (4, 7),
     (4, 8);
-
--- DELETE FROM Lesson_Content;
--- -- Xóa dữ liệu liên kết trước
--- DELETE FROM Content;
--- DELETE FROM Lesson;
-
--- DBCC CHECKIDENT ('Lesson', RESEED, 0);
--- DBCC CHECKIDENT ('Content', RESEED, 0);
-

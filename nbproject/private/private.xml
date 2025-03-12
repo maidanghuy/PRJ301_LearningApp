@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/LoginGoogleServlet.java</file>
             <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/LoadContentServlet.java</file>
+            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/modelDAO/LessonDAO.java</file>
+            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/GoogleLoginServlet.java</file>
             <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/InformationCourseServlet.java</file>
+            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/GoogleLogin.java</file>
             <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/CourseServlet.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/web/learn.jsp</file>
             <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/modelDAO/ContentDAO.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/web/learningpage.jsp</file>
+            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/DivideActionServlet.java</file>
         </group>
     </open-files>
 </project-private>

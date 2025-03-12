@@ -4,7 +4,7 @@
  */
 package model;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -16,12 +16,12 @@ public class Lesson {
     private int courseID;
     private String lessonTitle;
     private String content;
+    private String shortContent;
     private int duration;
     private Date createdAt;
 
     // Constructors
     public Lesson() {
-        this.createdAt = new Date(); // Mặc định lấy ngày hiện tại
     }
 
     public Lesson(int lessonID, int courseID, String lessonTitle, String content, int duration, Date createdAt) {
@@ -29,6 +29,7 @@ public class Lesson {
         this.courseID = courseID;
         this.lessonTitle = lessonTitle;
         this.content = content;
+        this.shortContent = content.length() > 150 ? content.substring(0, 150) + "..." : content;
         this.duration = duration;
         this.createdAt = createdAt;
     }
@@ -64,6 +65,14 @@ public class Lesson {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getShortContent() {
+        return shortContent;
+    }
+
+    public void setShortContent(String shortContent) {
+        this.shortContent = shortContent;
     }
 
     public int getDuration() {

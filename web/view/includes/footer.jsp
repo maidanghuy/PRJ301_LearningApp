@@ -8,7 +8,7 @@
         <div class="footer__left">
             <div class="footer__logo">
                 <div class="footer__logo-image">
-                    <img src="./assets/images/navbar_icon/Logo.svg" alt="G-EASY Logo"
+                    <img src="${img}/navbar_icon/Logo.svg" alt="G-EASY Logo"
                          class="footer__logo-img" />
                 </div>
             </div>

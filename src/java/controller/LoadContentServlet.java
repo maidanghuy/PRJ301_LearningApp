@@ -60,10 +60,11 @@ public class LoadContentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
         ContentDAO dao = new ContentDAO();
-        List<Content> listContent = dao.getAllContent();
+        List<Content> listContent = dao.getAllContentByLessonID(id);
         request.setAttribute("listContent", listContent);
-        request.getRequestDispatcher("learn.jsp").forward(request, response);
+        request.getRequestDispatcher("view/learn.jsp").forward(request, response);
 //          HttpSession session = request.getSession();
 //          session.setAttribute("listContent", listContent);
           
