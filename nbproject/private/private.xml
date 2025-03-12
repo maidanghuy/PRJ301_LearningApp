@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/connectDB/ConnectDB.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/LoadContentServlet.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/model/User.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/connectDB/DatabaseInfo.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/model/Content.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/GoogleLogin.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/constant/IConstant.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/web/learn.jsp</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/modelDAO/ContentDAO.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/web/WEB-INF/web.xml</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/controller/DivideActionServlet.java</file>
-            <file>file:/E:/CHUYÊN_NGÀNH_4/EnglishProject/PRJ301_LearningApp/src/java/modelDAO/UserDAO.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
