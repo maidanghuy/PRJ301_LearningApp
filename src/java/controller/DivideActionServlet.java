@@ -101,8 +101,8 @@ public class DivideActionServlet extends HttpServlet {
                 break;
             }
             case "test" -> {
-                request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
-                request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
+//                request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
+                request.getRequestDispatcher("/Test").forward(request, response);
                 break;
             }
             case "account" -> {
