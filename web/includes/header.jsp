@@ -11,7 +11,7 @@
         <div class="wrapper__header-login">
             <c:choose>
                 <c:when test="${not empty sessionScope.user}">
-                    <a href="divide?action=logout">
+                    <a href="view?action=logout">
                         <img style="width: 40px;
                              height: 40px;
                              border-radius: 100%;
