@@ -125,6 +125,12 @@ public class DivideActionServlet extends HttpServlet {
                 request.getRequestDispatcher("register.jsp").forward(request, response);
                 break;
             }
+            
+            case "viewTest" -> {
+                int testID = Integer.parseInt(request.getParameter("id"));
+                request.getRequestDispatcher("/StartTestServlet?id=" + testID).forward(request, response);
+                break;
+            }
             default -> {
                 request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
                 break;
