@@ -41,6 +41,7 @@ CREATE TABLE Courses
     -- Ngày tạo khóa học
     updatedAt DATETIME DEFAULT GETDATE()
     -- Ngày cập nhật khóa hoc
+    -- Ngày cập nhật khóa hoc
 );
 
 ALTER TABLE Courses 
@@ -55,19 +56,14 @@ ADD
 
 ALTER TABLE Courses 
 ADD 
-
-
 	commitment  NVARCHAR(MAX) 
 ;
 
 
 ALTER TABLE Courses 
 ADD 
-    linkimg NVARCHAR(MAX), 
+    linkimg NVARCHAR(MAX)
     -- Thông tin chi tiết về khóa học
-
-    
-
 ;
 -- Bảng User_Course (Liên kết người dùng và khóa học)
 CREATE TABLE User_Course
@@ -122,8 +118,9 @@ CREATE TABLE Content
     -- Tài liệu tham khảo
     example NVARCHAR(MAX),
     -- Ví dụ minh họa
-    createdAt DATETIME DEFAULT GETDATE()
+    createdAt DATETIME DEFAULT GETDATE(),
     -- Ngày tạo nội dung
+    describe NVARCHAR(MAX)
 );
 
 -- Bảng Lesson_Content (Liên kết bài học với nội dung)
