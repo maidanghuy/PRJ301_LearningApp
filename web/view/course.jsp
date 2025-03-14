@@ -86,7 +86,7 @@
                         <div class="course-container">
                             <% for (Course course : courseL) {%>
                             <div class="course-card">
-                                <img src="<%= course.getLinkimg()%>"
+                                <img src="${img}<%= course.getLinkimg()%>"
                                      alt="<%= course.getCourseName()%>"
                                      class="course-img">
                                 <h3>

@@ -205,11 +205,11 @@ WHERE courseID IN (1, 2, 3, 4, 5);
 UPDATE Courses 
 SET linkimg = 
     CASE 
-        WHEN courseID = 5 THEN './assets/images/course/Japanese-N4.jpg'
-        WHEN courseID = 4 THEN './assets/images/course/Japanese-N5.jpg'
-        WHEN courseID = 3 THEN './assets/images/course/toeic.png'
-        WHEN courseID = 2 THEN './assets/images/course/toeic-smartcom-english_optimized.jpg'
-		WHEN courseID = 1 THEN './assets/images/course/toeic-smartcom-english_optimized.jpg'
+        WHEN courseID = 5 THEN '/course/Japanese-N4.jpg'
+        WHEN courseID = 4 THEN '/course/Japanese-N5.jpg'
+        WHEN courseID = 3 THEN '/course/toeic.png'
+        WHEN courseID = 2 THEN '/course/toeic-smartcom-english_optimized.jpg'
+		WHEN courseID = 1 THEN '/course/toeic-smartcom-english_optimized.jpg'
         ELSE linkimg
     END;
 
