@@ -290,29 +290,35 @@
     display: flex;
     width: 195px;
     align-items: center;
-    gap: 8px; /* Khoảng cách giữa icon và chữ */
+    gap: 8px;
+    /* Khoảng cách giữa icon và chữ */
     padding: 12px 20px;
-    background-color: #f2f1ef; /* Màu nền */
+    background-color: #f2f1ef;
+    /* Màu nền */
     border: none;
-    border-radius: 30px; /* Bo góc tròn */
+    border-radius: 30px;
+    /* Bo góc tròn */
     cursor: pointer;
     font-size: 16px;
-    color: #3a3a3a; /* Màu chữ */
+    color: #3a3a3a;
+    /* Màu chữ */
     font-weight: 500;
     text-decoration: none;
     transition: background 0.3s, transform 0.2s;
 }
 
 .download-btn i {
-    font-size: 18px; /* Kích thước icon */
+    font-size: 18px;
+    /* Kích thước icon */
 }
 
 .download-btn:hover {
     background-color: #e5e4e2;
-    transform: scale(1.05); /* Hiệu ứng khi hover */
+    transform: scale(1.05);
+    /* Hiệu ứng khi hover */
 }
 
-.lesson-file{
+.lesson-file {
     margin-top: 10px;
     margin-left: 565px;
 }
@@ -388,7 +394,7 @@
 }
 
 /* ------------------------- */
-.content{
+.content {
     width: 800px;
     position: absolute;
     right: 26px;
@@ -396,17 +402,136 @@
 
 /* css khung youtube */
 
-iframe{
+iframe {
     border-radius: 30px;
 }
 
 /* Chống tràn */
 .container-custom {
-    max-width: 100vw; 
+    max-width: 100vw;
     overflow-x: hidden;
 }
 
-footer{
+footer {
     position: relative;
     z-index: auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        /* Chuyển từ ngang sang dọc */
+        height: auto;
+    }
+
+    .sidebar__child {
+        width: 100%;
+        /* Chiếm toàn bộ chiều rộng */
+        height: auto;
+        position: relative;
+        border-right: none;
+        box-shadow: none;
+    }
+
+    .content {
+        width: 100%;
+        position: relative;
+        padding: 10px;
+    }
+
+    .lesson-file {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar__child {
+        padding: 10px;
+    }
+
+    .sidebar__input {
+        padding: 5px;
+    }
+
+    .lesson {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lesson__icon {
+        margin-bottom: 5px;
+    }
+
+    .lesson__progress {
+        margin-top: 5px;
+    }
+
+    .download-btn {
+        width: auto;
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar__search {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .sidebar__button {
+        width: 100%;
+    }
+
+    .lesson-detail__title {
+        font-size: 18px;
+    }
+
+    .lesson-detail__description {
+        font-size: 14px;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 80%; /* Thu hẹp bố cục để không quá rộng */
+        margin: auto;
+    }
+
+    .sidebar__child {
+        width: 350px; /* Tăng chiều rộng sidebar để tận dụng không gian */
+        padding: 20px;
+    }
+
+    .lesson {
+        padding: 18px; /* Tăng khoảng cách để thoáng hơn */
+    }
+
+    .lesson__title {
+        font-size: 18px; /* Tăng kích thước tiêu đề */
+    }
+
+    .lesson__description {
+        font-size: 16px; /* Tăng kích thước mô tả */
+    }
+
+    .content {
+        width: calc(100% - 400px); /* Mở rộng nội dung chính */
+        padding: 30px;
+    }
+
+    iframe {
+        max-width: 900px; /* Giữ kích thước video hợp lý */
+    }
+
+    .lesson-file {
+        margin-left: 0;
+        text-align: center;
+    }
 }

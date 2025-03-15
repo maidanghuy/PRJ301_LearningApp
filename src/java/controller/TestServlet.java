@@ -10,17 +10,17 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-import java.util.ArrayList;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
-import model.Content;
-import modelDAO.ContentDAO;
+import model.Test;
+import modelDAO.TestDao;
 
 /**
  *
- * @author LENOVO
+ * @author Asus
  */
-public class LoadContentServlet extends HttpServlet {
+public class TestServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,10 +39,10 @@ public class LoadContentServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LoadContentServlet</title>");
+            out.println("<title>Servlet TestServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet LoadContentServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet TestServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -60,14 +60,21 @@ public class LoadContentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int id = Integer.parseInt(request.getParameter("id"));
-        ContentDAO dao = new ContentDAO();
-        List<Content> listContent = dao.getAllContentByLessonID(id);
-        request.setAttribute("listContent", listContent);
-        request.getRequestDispatcher("view/learn.jsp").forward(request, response);
-//          HttpSession session = request.getSession();
-//          session.setAttribute("listContent", listContent);
-          
+        TestDao dao = new TestDao();
+        List<Test> listCourse = dao.getAll();
+
+// Chuyển đổi Timestamp -> Date cho từng đối tượng trong danh sách
+        for (Test test : listCourse) {
+            Timestamp sqlTimestamp = test.getCreatedAt();
+            if (sqlTimestamp != null) {
+                test.setCreatedAt(new Timestamp(sqlTimestamp.getTime())); // ✅ Giữ nguyên kiểu Timestamp
+            }
+        }
+
+// Gửi danh sách đã xử lý sang JSP
+        request.setAttribute("list", listCourse);
+        request.getRequestDispatcher("view/Testing.jsp").forward(request, response);
+
     }
 
     /**

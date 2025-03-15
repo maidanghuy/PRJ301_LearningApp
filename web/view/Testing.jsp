@@ -1,72 +1,91 @@
-<%-- Document : Testing Created on : Mar 9, 2025, 11:43:45 PM Author : Asus --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="includes/common.jsp" %>
+<%@page contentType="text/html" pageEncoding="UTF-8" %> 
+<%@ include file="./includes/common.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Testing - G-easy Learning</title>
-        <base href="${url}/">
-        <link rel="stylesheet" href="${css}/index.css">
-        <link rel="stylesheet" href="${css}/testing.css">
-        <%@ include file="includes/headInfo.jsp" %>
-
+        <title>Home Page</title>
+        <%@ include file="./includes/headInfo.jsp" %>
+        <!-- styles.css: Chứa các quy tắc CSS chính của trang -->
+        <link rel="stylesheet" href="${css}/index.css" />
+        <link rel="stylesheet" href="${css}/testing.css" />
     </head>
 
     <body>
-                <%@ include file="includes/navbar.jsp" %>
-        <%@ include file="includes/header.jsp" %>
+        <div class="container-custom">
+            <div class="container-left">
+                <%@ include file="./includes/navbar.jsp" %>
+            </div>
+            <div class="container-right">
+                <div class="main-content">
+                    <%@ include file="./includes/header.jsp" %>
 
-
-        <main class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Test Your Knowledge</h2>
-                            <div class="test-content">
-                                <c:forEach items="${testList}" var="test">
-                                    <div class="test-item">
-                                        <h3>${test.title}</h3>
-                                        <p>${test.description}</p>
-                                        <div class="test-meta">
-                                            <span>Level: ${test.level}</span>
-                                            <span>Duration: ${test.duration} minutes</span>
-                                        </div>
-                                        <a href="${url}/view/test/${test.id}" class="btn btn-primary">Start
-                                            Test</a>
-                                    </div>
-                                </c:forEach>
+                    <div class="content-wrapper">
+                        <div class="test-header">
+                            <div class="test-filters">
+                                <button class="filter-btn active" data-type="all">
+                                    <i class="fas fa-list"></i> All
+                                </button>
+                                <button class="filter-btn" data-type="listening">
+                                    <i class="fas fa-headphones"></i> Listening
+                                </button>
+                                <button class="filter-btn" data-type="reading">
+                                    <i class="fas fa-book-reader"></i> Reading
+                                </button>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">Test Instructions</h3>
-                            <ul class="list-unstyled">
-                                <li>Read each question carefully</li>
-                                <li>Select the best answer</li>
-                                <li>Submit when you're done</li>
-                                <li>Review your results</li>
-                            </ul>
+
+
+                        <div class="test-container">
+                            <c:forEach var="test" items="${list}">
+                                <div class="test-item" data-type="${test.category.toLowerCase()}">
+                                    <div class="test-item-header">
+                                        <div class="header-main">
+                                            <span class="test-badge ${test.category.toLowerCase()}">
+                                                ${test.category}
+                                            </span>
+                                            <h3 class="test-name">${test.testName}</h3>
+                                        </div>
+                                        <div class="test-time">
+                                            <i class="fas fa-clock"></i>
+                                            <span>${test.duration} min</span>
+                                        </div>
+                                    </div>
+                                    <div class="test-details">
+                                        <div class="meta-info">
+                                            <div class="info-item">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                <span><fmt:formatDate value="${test.createdAt}" pattern="dd-MM-yyyy" type="date" /></span>
+                                            </div>
+                                            <div class="info-item">
+                                                <i class="fas fa-tasks"></i>
+                                                <span>100 Questions</span>
+                                            </div>
+                                        </div>
+                                        <p class="test-desc">
+                                            ${test.description}
+                                        </p>
+                                    </div>
+                                    <div class="test-actions">
+                                        <a href="start-test?testID=${test.testID}" class="btn-start-test">
+                                            <span>Start</span>
+                                            <i class="fas fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </c:forEach>
                         </div>
                     </div>
+                    <footer><%@ include file="./includes/footer.jsp" %></footer>
                 </div>
             </div>
-        </main>
+            <%@ include file="./includes/chatbot.jsp" %>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+            <%@ include file="./includes/javascriptInfo.jsp" %>
 
-        <jsp:include page="includes/footer.jsp" />
-        <jsp:include page="includes/chatbot.jsp" />
-        <jsp:include page="includes/javascriptInfo.jsp" />
 
-        <script src="${js}/testing.js"></script>
+            <script src="${js}/testing.js"></script>
     </body>
-
 </html>

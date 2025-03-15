@@ -55,6 +55,12 @@ public class URLRewriteFilter implements Filter {
             req.getRequestDispatcher("/DivideActionServlet?action=viewCourse&id=" + courseId).forward(request, response);
             return;
         }
+        
+        if (path.matches("/view/test/\\d+")) {
+            String testId = path.substring(path.lastIndexOf('/') + 1);
+            req.getRequestDispatcher("/DivideActionServlet?action=viewTest&id=" + testId).forward(request, response);
+            return;
+        }
 
         // Handle /view/* URLs
         if (path.startsWith("/view/")) {
