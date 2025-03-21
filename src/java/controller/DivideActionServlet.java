@@ -101,8 +101,8 @@ public class DivideActionServlet extends HttpServlet {
                 break;
             }
             case "test" -> {
-                request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
-                request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
+//                request.setAttribute("featureMessage", "Tính năng này chưa có sẵn!");
+                request.getRequestDispatcher("/Test").forward(request, response);
                 break;
             }
             case "account" -> {
@@ -123,6 +123,12 @@ public class DivideActionServlet extends HttpServlet {
             }
             case "register" -> {
                 request.getRequestDispatcher("register.jsp").forward(request, response);
+                break;
+            }
+            
+            case "viewTest" -> {
+                int testID = Integer.parseInt(request.getParameter("id"));
+                request.getRequestDispatcher("/StartTestServlet?id=" + testID).forward(request, response);
                 break;
             }
             default -> {
