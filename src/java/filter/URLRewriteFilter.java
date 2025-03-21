@@ -41,6 +41,17 @@ public class URLRewriteFilter implements Filter {
             req.getRequestDispatcher("/DivideActionServlet?action=lesson").forward(request, response);
             return;
         }
+        //NEW
+        if (path.matches("/view/course/LoadVnpay")) {
+            req.getRequestDispatcher("vnpay_pay.jsp").forward(request, response);
+//            resp.sendRedirect("vnpay_pay.jsp");
+            return;
+        }
+        
+//       if (path.matches("/view/course/vnpayajax")) {
+//           req.getRequestDispatcher("/vnpayajax").forward(request, response);
+//           return;
+//       }
         
         
         if (path.matches("/view/course/lesson/\\d+")) {
@@ -60,7 +71,7 @@ public class URLRewriteFilter implements Filter {
         if (path.startsWith("/view/")) {
             String action = path.substring(6); // Remove "/view/" prefix
             // Kiểm tra xem action có hợp lệ không
-            if (!action.matches("home|material|course|test|account")) {
+            if (!action.matches("home|material|course|test|account|LoadVnpay")) {
                 action = "home"; // Mặc định là "home" nếu không hợp lệ
             }
             req.getRequestDispatcher("/DivideActionServlet?action=" + action).forward(request, response);
@@ -86,7 +97,7 @@ public class URLRewriteFilter implements Filter {
             req.getRequestDispatcher("/DivideActionServlet?action=logout").forward(request, response);
             return;
         }
-
+    
         chain.doFilter(request, response);
     }
 
