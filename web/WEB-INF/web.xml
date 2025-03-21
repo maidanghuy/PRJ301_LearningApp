@@ -37,8 +37,13 @@
         <servlet-class>controller.LessonServlet</servlet-class>
     </servlet>
     <servlet>
+
+        <servlet-name>LoadVnpayServlet</servlet-name>
+        <servlet-class>controller.LoadVnpayServlet</servlet-class>
+
         <servlet-name>TestServlet</servlet-name>
         <servlet-class>controller.TestServlet</servlet-class>
+
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -65,7 +70,25 @@
         <url-pattern>/LessonServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+
+        <servlet-name>LoadVnpayServlet</servlet-name>
+        <url-pattern>/LoadVnpay</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <servlet>
+        <servlet-name>ajaxServlet</servlet-name>
+        <servlet-class>com.vnpay.common.ajaxServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ajaxServlet</servlet-name>
+        <url-pattern>/vnpayajax/*</url-pattern>
+
         <servlet-name>TestServlet</servlet-name>
         <url-pattern>/Test</url-pattern>
+
     </servlet-mapping>
 </web-app>

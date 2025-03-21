@@ -15,6 +15,9 @@ import model.Course;
 import modelDAO.CourseDao;
 import java.util.HashMap;
 import java.util.Map;
+import model.User;
+import model.User_Course;
+import modelDAO.User_CourseDAO;
 
 /**
  *
@@ -82,7 +85,19 @@ public class InformationCourseServlet extends HttpServlet {
 
         request.setAttribute("course", course);
         request.setAttribute("learningPathway", learningPathwayMap);
-        request.getRequestDispatcher("view/InformationCourse.jsp").forward(request, response);
+
+        //new
+        User user = (User) request.getSession().getAttribute("user");
+        int userID = user.getUserID();
+//        int coureID = (int) request.getSession().getAttribute("coureID");
+        User_CourseDAO ucDao = new User_CourseDAO();
+        User_Course uc = ucDao.getUser_CourseByID(userID, id);
+        if(uc.getProgress() != null){
+            request.getRequestDispatcher("LessonServlet").forward(request, response);
+        }
+        else{
+            request.getRequestDispatcher("view/InformationCourse.jsp").forward(request, response);
+        }
     }
 
     /**

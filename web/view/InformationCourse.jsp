@@ -127,7 +127,12 @@
                                 Another Course
                             </button></a
                         >
-                        <a href="lesson"
+                        <!--                        <a href="lesson"
+                                                   ><button class="btn course__register-btn">
+                                                        Enroll
+                                                    </button></a
+                                                >-->
+                        <a href="${url}/LoadVnpay"
                            ><button class="btn course__register-btn">
                                 Enroll
                             </button></a
