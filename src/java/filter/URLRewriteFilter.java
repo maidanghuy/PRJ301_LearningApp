@@ -29,20 +29,19 @@ public class URLRewriteFilter implements Filter {
 
         // Remove context path from request URI
         String path = requestURI.substring(contextPath.length());
-        
+
         // Handle course URLs
         if (path.matches("/view/course")) {
             req.getRequestDispatcher("/DivideActionServlet?action=course").forward(request, response);
             return;
         }
-        
+
         // Handle course URLs
         if (path.matches("/view/course/lesson")) {
             req.getRequestDispatcher("/DivideActionServlet?action=lesson").forward(request, response);
             return;
         }
-        
-        
+
         if (path.matches("/view/course/lesson/\\d+")) {
             String lessonID = path.substring(path.lastIndexOf('/') + 1);
             req.getRequestDispatcher("/DivideActionServlet?action=viewLesson&id=" + lessonID).forward(request, response);
@@ -55,12 +54,27 @@ public class URLRewriteFilter implements Filter {
             req.getRequestDispatcher("/DivideActionServlet?action=viewCourse&id=" + courseId).forward(request, response);
             return;
         }
-        
+
         if (path.matches("/view/test/\\d+")) {
             String testId = path.substring(path.lastIndexOf('/') + 1);
             req.getRequestDispatcher("/DivideActionServlet?action=viewTest&id=" + testId).forward(request, response);
             return;
         }
+
+        if (path.matches("/view/test/submit/\\d+")) {
+            String testId = path.substring(path.lastIndexOf('/') + 1);
+            req.getRequestDispatcher("/DivideActionServlet?action=submit&id=" + testId).forward(request, response);
+            return;
+        }
+        
+        if (path.matches("/view/viewSubmit")) {
+            req.getRequestDispatcher("/view/Submit.jsp").forward(request, response);
+            return;
+        }
+//        if (path.matches("/view/test/submit/\\d+")) {
+//            chain.doFilter(request, response); // Không forward, cho phép đi thẳng vào SubmitServlet
+//            return;
+//        }
 
         // Handle /view/* URLs
         if (path.startsWith("/view/")) {

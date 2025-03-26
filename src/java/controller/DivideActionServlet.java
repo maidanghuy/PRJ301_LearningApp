@@ -15,7 +15,9 @@ import jakarta.servlet.http.HttpSession;
 import java.sql.Date;
 import java.time.LocalDate;
 import model.Course;
+import model.Test;
 import model.User;
+import modelDAO.TestDao;
 import modelDAO.UserDAO;
 
 /**
@@ -125,12 +127,30 @@ public class DivideActionServlet extends HttpServlet {
                 request.getRequestDispatcher("register.jsp").forward(request, response);
                 break;
             }
-            
+
             case "viewTest" -> {
                 int testID = Integer.parseInt(request.getParameter("id"));
-                request.getRequestDispatcher("/StartTestServlet?id=" + testID).forward(request, response);
+                TestDao dao= new TestDao();
+                Test test= new Test();
+                test=dao.getByTestID(testID);
+                if(test.getCategory().equalsIgnoreCase("reading")){
+                    request.getRequestDispatcher("/StartTesting?id=" + testID).forward(request, response);
+                }else{
+                    request.getRequestDispatcher("/TestListenningServlet?id=" + testID).forward(request, response);
+                }
                 break;
             }
+            case "submit" -> {
+                int testId = Integer.parseInt(request.getParameter("id"));
+                request.getRequestDispatcher("/SubmitServlet?id=" + testId).forward(request, response);
+                break;
+            }
+
+//            case "submit" -> {
+//                int testId = Integer.parseInt(request.getParameter("id"));
+//                response.sendRedirect("/SubmitServlet?id=" + testId); // Chuyển hướng thay vì forward
+//                break;
+//            }
             default -> {
                 request.getRequestDispatcher("view/learningpage.jsp").forward(request, response);
                 break;
@@ -289,7 +309,7 @@ public class DivideActionServlet extends HttpServlet {
             request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }
-
+    
     /**
      * Returns a short description of the servlet.
      *

@@ -11,15 +11,19 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import model.Test;
+import modelDAO.TestDao;
+
 import java.util.List;
-import model.Course;
-import modelDAO.CourseDao;
+import model.Readding;
 
 /**
  *
  * @author Asus
  */
-public class StartTestServlet extends HttpServlet {
+
+public class ReadingServlet extends HttpServlet {
    
     /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
@@ -36,30 +40,37 @@ public class StartTestServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet StartTestServlet</title>");  
+            out.println("<title>Servlet StartTestingServlet</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet StartTestServlet at " + request.getContextPath () + "</h1>");
+            out.println("<h1>Servlet StartTestingServlet at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
     } 
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /** 
-     * Handles the HTTP <code>GET</code> method.
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
+    
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-//        CourseDao dao= new CourseDao();
-//        List<Course> listCourse = dao.getAll();
-//        request.setAttribute("list", listCourse);
-        request.getRequestDispatcher("view/startTesting.jsp").forward(request, response);
+        ReadExcel read= new ReadExcel();
+        int testID=Integer.parseInt(request.getParameter("id"));
+        TestDao dao= new TestDao();
+        Test test = dao.getByTestID(testID);
+        
+        String filePath = getServletContext().getRealPath("/WEB-INF/Excel/" + test.getFilePath().trim());
+        int time=test.getDuration();
+        
+        List<Readding> questions = read.getReading(filePath); 
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("timeTest", time);
+        session.setAttribute("list", questions);
+        session.setAttribute("testID", testID);
+        
+        request.getRequestDispatcher("view/Reading.jsp").forward(request, response);
     } 
 
     /** 

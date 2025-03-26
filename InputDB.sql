@@ -260,3 +260,13 @@ VALUES
     -- Link listening lesson with listening content
     (4, 7),
     (4, 8);
+
+UPDATE [ElearningDB].[dbo].[Test]
+SET filePath = 
+    CASE 
+        WHEN testID = 3 THEN ''
+        WHEN testID = 4 THEN 'D:\\GITPRJ\\PRJ301_LearningApp\\excel\\Assignment\\Reading\\Starter_TOEIC_ReadingUnit1.xlsx'
+        WHEN testID = 5 THEN 'path/to/file5'
+        WHEN testID = 6 THEN 'D:\\GITPRJ\\PRJ301_LearningApp\\excel\\Assignment\\Reading\\Starter_TOEIC_ReadingUnit2.xlsx'
+    END
+WHERE testID IN (3, 4, 5, 6);

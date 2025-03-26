@@ -3,36 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/constant/Constant.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/view/Testing.jsp</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/TestServlet.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/LessonServlet.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/modelDAO/UserDAO.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/assets/CSS/course_details.css</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/login.jsp</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/modelDAO/ContentDAO.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/model/Test.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/assets/CSS/testing.css</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/modelDAO/LessonDAO.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/filter/URLRewriteFilter.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/modelDAO/CourseDao.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/model/Lesson.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/connectDB/ConnectDB.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/DivideActionServlet.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/connectDB/DatabaseInfo.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/view/course.jsp</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/model/Content.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/modelDAO/TestDao.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/GoogleLogin.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/assets/JS/testing.js</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/view/startTesting.jsp</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/view/learningpage.jsp</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/GoogleLoginServlet.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/view/material.jsp</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/LoginGoogleServlet.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/controller/LoadContentServlet.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/src/java/constant/IConstant.java</file>
-            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/view/includes/StartingTest.jsp</file>
+            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/view/Listening.jsp</file>
+            <file>file:/D:/GITPRJ/PRJ301_LearningApp/web/assets/JS/Listening.js</file>
         </group>
     </open-files>
 </project-private>

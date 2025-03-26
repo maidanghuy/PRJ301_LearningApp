@@ -209,10 +209,8 @@ body.show-chatbot #chatbot-toggler span:last-child {
 }
 
 @keyframes dotPulse {
-
-    0%,
-    44% {
-        transform: translateY (0);
+    0% {
+        transform: translateY(0);
     }
 
     28% {
@@ -224,6 +222,9 @@ body.show-chatbot #chatbot-toggler span:last-child {
         opacity: 0.2;
     }
 }
+
+
+
 
 .chat-footer {
     position: absolute;

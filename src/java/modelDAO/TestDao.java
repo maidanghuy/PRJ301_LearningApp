@@ -15,15 +15,13 @@ import java.util.List;
 import model.Course;
 import model.Test;
 
-
-
 /**
  *
  * @author Asus
  */
 public class TestDao {
 
-     Connection conn;
+    Connection conn;
 
     public TestDao() {
         ConnectDB connectDB = new ConnectDB();
@@ -53,7 +51,7 @@ public class TestDao {
                 int duration = result.getInt(4);
                 String filePath = result.getString(5);
                 Timestamp createdAt = result.getTimestamp(6);
-                
+
                 String category = result.getString(7);
                 Test test = new Test(testID, testName, description, duration, filePath, createdAt, category);
 
@@ -66,15 +64,45 @@ public class TestDao {
         }
         return testL;
     }
-    
-    public static void main(String[] args) {
-       TestDao dao = new TestDao();
-//        //Test lay toan bo khoa hoc
-        List<Test> list = new ArrayList<>();
-        list = dao.getAll();
-        for (Test c : list) {
-            System.out.println(c);
+
+    public Test getByTestID(int testID) {
+        String sql = "SELECT * FROM [dbo].[Test] WHERE testID = ?";
+        Test test = null;
+
+        try (PreparedStatement pre = conn.prepareStatement(sql)) {
+            pre.setInt(1, testID);
+            try (ResultSet result = pre.executeQuery()) {
+                if (result.next()) {
+                    String testName = result.getString(2);
+                    String description = result.getString(3);
+                    int duration = result.getInt(4);
+                    String filePath = result.getString(5);
+                    Timestamp createdAt = result.getTimestamp(6);
+
+                    String category = result.getString(7);
+
+                    test = new Test(testID, testName, description, duration, filePath, createdAt, category);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); // Nên dùng e.printStackTrace() để dễ debug hơn
         }
+        return test; // Trả về null nếu không tìm thấy
     }
-    
+
+    public static void main(String[] args) {
+        TestDao dao = new TestDao();
+//        //Test lay toan bo khoa hoc
+//        List<Test> list = new ArrayList<>();
+//        list = dao.getAll();
+//        for (Test c : list) {
+//            System.out.println(c);
+//        }
+
+          Test test=dao.getByTestID(3);
+          System.out.println(test.getFilePath());
+          System.out.println(test.getCategory());
+          System.out.println(test);
+    }
+
 }

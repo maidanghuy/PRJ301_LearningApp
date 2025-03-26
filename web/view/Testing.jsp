@@ -69,7 +69,7 @@
                                         </p>
                                     </div>
                                     <div class="test-actions">
-                                        <a href="start-test?testID=${test.testID}" class="btn-start-test">
+                                        <a href="${contextPath}/view/test/${test.testID}" class="btn-start-test">
                                             <span>Start</span>
                                             <i class="fas fa-arrow-right"></i>
                                         </a>
